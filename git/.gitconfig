@@ -1,0 +1,18 @@
+[color]
+	ui = auto
+[user]
+	name = Gianpaulo
+	email = jam_pow@hotmail.com
+[alias]
+	st = status
+	ci = commit
+	br = branch
+	co = checkout
+	df = diff
+	rb = rebase
+	lg = log --pretty=format:'%Cgreen%h %Cblue%ad %Cred%cn %Creset%s' --date=short
+	ffc = diff-tree --no-commit-id --name-only -r 
+	spull = !git-svn fetch && git-svn rebase
+	spush = !git-svn dcommit
+[push]
+	default = simple
