@@ -2,7 +2,7 @@
 	ui = auto
 [user]
 	name = Gianpaulo
-	email = jam_pow@hotmail.com
+	email = gsoares@uolinc.com
 [alias]
 	st = status
 	ci = commit
@@ -14,5 +14,26 @@
 	ffc = diff-tree --no-commit-id --name-only -r 
 	spull = !git-svn fetch && git-svn rebase
 	spush = !git-svn dcommit
+	ll = log --pretty=format:\"%C(yellow)%h%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]\" --decorate --numstat
+	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	lol = log --graph --decorate --pretty=oneline --abbrev-commit
+	cp = cherry-pick
+	lgb = "!git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:red)%(objectname:short)%(color:reset);%(color:yellow)%(refname:short)%(color:reset);(%(color:green)%(committerdate:relative)%(color:reset));%(authorname);%(contents:subject)' | column -t -s ';'"
 [push]
 	default = simple
+[http]
+	sslVerify = false
+[url "https://"]
+	insteadOf = git://
+[core]
+	autocrlf = false
+	fileMode = false
+[diff]
+	submodule = log
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = 00 bold 01
+	newNormal = green bold
+	newHighlight = green bold 22
+[credential]
+	helper = store
