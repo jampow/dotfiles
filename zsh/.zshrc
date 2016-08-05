@@ -7,13 +7,9 @@ export ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="bira"
 
+# Load alias file
 if [ -f ~/.bash_alias ]; then
   . ~/.bash_alias
-fi
-
-if [ -n "$DESKTOP_SESSION" ];then
-	eval $(gnome-keyring-daemon --start)
-	export SSH_AUTH_SOCK
 fi
 
 # Uncomment the following line to use case-sensitive completion.
