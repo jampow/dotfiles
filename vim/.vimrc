@@ -32,7 +32,7 @@ Plug 'crusoexia/vim-dracula'
 Plug 'maksimr/vim-jsbeautify'
 Plug 'wakatime/vim-wakatime'
 Plug 'sirver/ultisnips'
-Plug 'valloric/youcompleteme'
+Plug 'lilydjwg/colorizer'
 
 call plug#end()
 
