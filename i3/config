@@ -5,17 +5,38 @@
 # this file and re-run i3-config-wizard(1).
 #
 
+# Colors
+set $base00 #101218
+set $base01 #1f222d
+set $base02 #252936
+set $base03 #7780a1
+set $base04 #C0C5CE
+set $base05 #d1d4e0
+set $base06 #C9CCDB
+set $base07 #ffffff
+set $base08 #ee829f
+set $base09 #f99170
+set $base0A #ffefcc
+set $base0B #a5ffe1
+set $base0C #97e0ff
+set $base0D #97bbf7
+set $base0E #c0b7f9
+set $base0F #fcc09e
+
 # i3 config file (v4)
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod4
+set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
+font pango:System San Francisco Display 10
+
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 8
+#font pango:DejaVu Sans Mono 8
+
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
@@ -27,13 +48,16 @@ font pango:DejaVu Sans Mono 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec xfce4-terminal -e 'tmux a'
+#bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec gnome-terminal --hide-menubar
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+space exec dmenu_run
+#bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec rofi -show run -lines 3 -width 20 -padding 10 -opacity "85" -font "System San Francisco Display 13" -config $HOME/.config/rofi/config -hide-scrollbar
+
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -71,7 +95,7 @@ bindsym $mod+h split h
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen
+bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -79,10 +103,10 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+d floating toggle
+bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+d focus mode_toggle
+bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -90,29 +114,40 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+set $workspace1 "1: Code "
+set $workspace2 "2: Internet "
+set $workspace3 "3: Music "
+set $workspace4 "4: E-mails "
+set $workspace5 "5"
+set $workspace6 "6"
+set $workspace7 "7"
+set $workspace8 "8"
+set $workspace9 "9"
+set $workspace10 "10"
+
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+1 workspace $workspace1
+bindsym $mod+2 workspace $workspace2
+bindsym $mod+3 workspace $workspace3
+bindsym $mod+4 workspace $workspace4
+bindsym $mod+5 workspace $workspace5
+bindsym $mod+6 workspace $workspace6
+bindsym $mod+7 workspace $workspace7
+bindsym $mod+8 workspace $workspace8
+bindsym $mod+9 workspace $workspace9
+bindsym $mod+0 workspace $workspace10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+1 move container to workspace $workspace1
+bindsym $mod+Shift+2 move container to workspace $workspace2
+bindsym $mod+Shift+3 move container to workspace $workspace3
+bindsym $mod+Shift+4 move container to workspace $workspace4
+bindsym $mod+Shift+5 move container to workspace $workspace5
+bindsym $mod+Shift+6 move container to workspace $workspace6
+bindsym $mod+Shift+7 move container to workspace $workspace7
+bindsym $mod+Shift+8 move container to workspace $workspace8
+bindsym $mod+Shift+9 move container to workspace $workspace9
+bindsym $mod+Shift+0 move container to workspace $workspace10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -132,7 +167,7 @@ mode "resize" {
         bindsym j resize shrink width 10 px or 10 ppt
         bindsym k resize grow height 10 px or 10 ppt
         bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym ccedilla resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -145,48 +180,54 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-# resize
 bindsym $mod+r mode "resize"
+# Widow Colours
+#                       border  background text    indicator
+client.focused          $base01 $base01    $base07 $base0F
+client.focused_inactive $base02 $base02    $base03 $base0F
+client.unfocused        $base02 $base02    $base03 $base0F
+client.urgent           $base02 $base08    $base00 $base0F
 
-# Printscreens
-bindsym Print exec scrot $HOME/screenshots/`date +%Y-%m-%d_%H:%M:%S`.png
-bindsym Mod4+Print exec scrot -u $HOME/screenshots/`date +%Y-%m-%d_%H:%M:%S`.png
-bindsym Mod4+Shift+Print exec scrot -s $HOME/screenshots/`date +%Y-%m-%d_%H:%M:%S`.png
-
-# place correct monitor
-exec --no-startup-id i3-msg 'exec xrandr --output DVI-0 --mode 1680x1050 --left-of DVI-1 --output DVI-1 --mode 1280x1024'
-
-# set keyboard rate
-exec --no-startup-id i3-msg 'exec xset r rate 250 50'
-exec --no-startup-id i3-msg 'exec setxkbmap br'
-
-# lock
-bindsym $mod+o exec i3lock --color 000000
+hide_edge_borders both
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-    status_command i3status
-    font Terminus 4
-    position top 
-    colors { 
-        statusline $foregroundColor
-        background #000000
-        focused_workspace $color1 $color1 $foregroundColor
-        inactive_workspace $color2 $color2 $foregroundColor
-    }
+	#status_command i3status
+    font pango: System San Francisco Display, FontAwesome 11
+	status_command i3blocks -c ~/.config/i3/i3blocks.conf
+    position bottom
+    # strip_workspace_numbers yes
+	# height 25
+	bindsym button4 nop
+	bindsym button5 nop
+	colors {
+		separator $base03
+		background $base01
+		statusline $base05
+		#                  border  background text
+		focused_workspace  $base01 $base01    $base07
+		active_workspace   $base01 $base02    $base03
+		inactive_workspace $base01 $base01    $base03
+		urgent_workspace   $base01 $base01    $base08
+	}
 }
 
-set $color1 #3b4257
-set $color2 #0A0C0D
-set $foregroundColor #a2b4c1
-set $color5 #A72327
+# screen lock
+bindsym $mod+shift+o exec i3lock --color 000000 -p win -e -u
 
-set $active #1C2939
-set $bg #0A0C0D
-set $fontColor #a2b4c1
+# volume binds
+bindsym $mod+comma exec amixer set Master 5%-
+bindsym $mod+period exec amixer set Master 5%+
+bindsym $mod+m exec amixer set Master 1+ toggle
 
-client.focused            $color1   $color1   $foregroundColor   $color1
-client.focused_inactive   $color2   $color2   #888888            $color1
-client.unfocused          $color2   $color2   #666666            $color1
+# Wallpaper
+exec_always feh --bg-scale /home/gsoares/Pictures/wallpapers/wp1.jpg
 
+# Autoload apps
+assign [class="chromium"] $workspace2
+assign [class="URxvt"] $workspace1
+assign [class="Thunderbird"] $workspace4
+
+# Transparencies
+exec_always compton -f
