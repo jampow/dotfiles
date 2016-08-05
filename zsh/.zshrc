@@ -19,6 +19,10 @@ fi
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
+# Uncomment the following line to use hyphen-insensitive completion. Case
+# sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
 
@@ -54,16 +58,11 @@ fi
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git rvm svn tmux urltools web-search safe-paste node wd ruby z vagrant)
-
-#ZSH_TMUX_AUTOSTART="true"
-#ZSH_TMUX_AUTOSTART_ONCE="false"
-#ZSH_TMUX_AUTOCONNECT="true"
-#ZSH_TMUX_AUTOQUIT="true"
+plugins=(git z tmux)
 
 # User configuration
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+# export PATH="/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -84,15 +83,6 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-# npm global modules
-export PATH=$PATH:$HOME/.npm_global_modules/bin
-
-# tmuxinator
-export EDITOR='vim'
-
-# UOL
-export SVNPATH=/home/gsoares/uol/repos/svn/
-
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -102,9 +92,13 @@ export SVNPATH=/home/gsoares/uol/repos/svn/
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export PATH="$PATH:$HOME/projetos/pebble/PebbleSDK-3.0-dp2/bin" # SDK Pebble
+# ZSH_TMUX_AUTOSTART_ONCE=true
 
-# rvm
-export PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
-source ~/.profile
+export PATH="$PATH:$HOME/bin"
 
+# NPM
+NPM_PACKAGES="${HOME}/.npm-packages"
+PATH="$NPM_PACKAGES/bin:$PATH"
+
+unset MANPATH
+export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
