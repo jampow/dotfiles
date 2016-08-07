@@ -233,3 +233,11 @@ assign [class="Thunderbird"] $workspace4
 
 # Transparencies
 exec_always compton -f
+
+# Inicializações automáticas
+
+# Dropbox
+exec ~/.dropbox-dist/dropboxd
+
+# Spotify
+exec spotify
