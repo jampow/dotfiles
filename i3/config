@@ -224,7 +224,7 @@ bindsym $mod+m exec amixer set Master 1+ toggle
 # Wallpaper
 exec_always feh --bg-scale /home/gsoares/Pictures/wallpapers/wp1.jpg
 
-# Autoload apps
+# Autoassign apps
 assign [class="Gnome-terminal"] $workspace1
 assign [class="Gvim"] $workspace1
 assign [class="chromium"] $workspace2
