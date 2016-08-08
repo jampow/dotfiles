@@ -231,6 +231,11 @@ assign [class="chromium"] $workspace2
 assign [class="Spotify"] $workspace3
 assign [class="Thunderbird"] $workspace4
 
+# Screenshots
+bindsym --release Print exec "scrot $HOME/Pictures/screenshots/full-%Y-%m-%d---%H.%M.%S.png"
+bindsym --release Shift+Print exec "scrot -d 1 -s $HOME/Pictures/screenshots/selection-%Y-%m-%d---%h.%M.%s.png"
+bindsym --release Control+Shift+Print exec "scrot -u $HOME/Pictures/screenshots/window-%Y-%m-%d---%h.%M.%s.png"
+
 # Transparencies
 exec_always compton -f
 
