@@ -10,3 +10,9 @@
 2. Unzip
 3. Copy the fonts/fontawesome-webfont.ttf to ~/.fonts
 
+## Spotify-now
+
+http://github.com/getmicah/spotify-now
+
+
+
