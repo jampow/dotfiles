@@ -1,6 +1,6 @@
 # Dependencies
 
-```sudo pacman -S git tmux rofi scrot feh thunar compton```
+```sudo pacman -S git tmux rofi scrot feh thunar compton lxappearance```
 
 # Manual installations
 
