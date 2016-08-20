@@ -1,0 +1,6 @@
+xterm*foreground: rgb:ff/ff/ff
+xterm*background: rgb:00/00/00
+xterm*termName: xterm-256color
+xterm*locale: true
+xterm*metaSendsEscape: true2
+xterm*saveLines: 4096
