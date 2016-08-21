@@ -1,13 +1,3 @@
-xterm*foreground: rgb:ff/ff/ff
-xterm*background: rgb:00/00/00
-xterm*termName: xterm-256color
-xterm*locale: true
-xterm*metaSendsEscape: true2
-xterm*saveLines: 4096
-xterm*borderWidth: 0
-UXTerm*faceName: Source Code Pro for Powerline
-UXTerm*faceSize: 10
-
 ! ------------------------------------------------------------------------------
 ! ROFI Color theme
 ! ------------------------------------------------------------------------------
