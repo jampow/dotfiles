@@ -96,5 +96,7 @@ export PATH="$PATH:$HOME/bin"
 NPM_PACKAGES="${HOME}/.npm-packages"
 PATH="$NPM_PACKAGES/bin:$PATH"
 
+export TERM="xterm-256color"
+
 unset MANPATH
 export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
