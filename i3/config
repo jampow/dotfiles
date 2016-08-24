@@ -227,12 +227,24 @@ bindsym $mod+m exec amixer set Master 1+ toggle
 # Wallpaper
 exec_always feh --bg-scale /home/gsoares/Pictures/wallpapers/wp1.jpg
 
-# Autoassign apps
+# Autoassign apps to workspaces
+# workspace 1
 assign [class="Gnome-terminal"] $workspace1
 assign [class="Gvim"] $workspace1
+
+# workspace 2
 assign [class="chromium"] $workspace2
+assign [class="Firefox"] $workspace2
+
+# workspace 3
 assign [class="Spotify"] $workspace3
+
+# workspace 4
 assign [class="Thunderbird"] $workspace4
+
+# workspace 5
+assign [class="Slack"] $workspace5
+assign [class="telegram-desktop"] $workspace5
 
 # Screenshots
 bindsym --release Print exec "scrot $HOME/Pictures/screenshots/full-%Y-%m-%d---%H.%M.%S.png"
