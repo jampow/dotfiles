@@ -7,6 +7,7 @@ xterm*termName: xterm-256color
 xterm*locale: true
 xterm*metaSendsEscape: true2
 xterm*saveLines: 4096
+xterm*borderWidth: 0
 
 ! ------------------------------------------------------------------------------
 ! ROFI Color theme
