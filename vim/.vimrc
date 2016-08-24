@@ -33,10 +33,13 @@ Plug 'maksimr/vim-jsbeautify'
 Plug 'wakatime/vim-wakatime'
 Plug 'sirver/ultisnips'
 Plug 'lilydjwg/colorizer'
+Plug 'henrik/vim-open-url'
 
 call plug#end()
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
+
+let g:open_url_browser="xdg-open"
 
 colorscheme dracula
