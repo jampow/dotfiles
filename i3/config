@@ -117,11 +117,11 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-set $workspace1 "1: Code "
-set $workspace2 "2: Internet "
-set $workspace3 "3: Music "
-set $workspace4 "4: E-mails "
-set $workspace5 "5"
+set $workspace1 "1: "
+set $workspace2 "2: "
+set $workspace3 "3: "
+set $workspace4 "4: "
+set $workspace5 "5: "
 set $workspace6 "6"
 set $workspace7 "7"
 set $workspace8 "8"
