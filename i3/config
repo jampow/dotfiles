@@ -261,3 +261,21 @@ exec ~/.dropbox-dist/dropboxd
 
 # Spotify
 exec spotify
+# toggle play/pause spotify
+bindsym $mod+p exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+# Next
+bindsym $mod+slash exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
+# Previous
+bindsym $mod+semicolon exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
+
+# Slack
+exec slack
+
+# Davmail
+exec davmail
+
+# Thunderbird
+exec thunderbird
+
+# synergy server
+exec synergys
