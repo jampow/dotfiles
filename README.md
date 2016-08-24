@@ -14,5 +14,8 @@
 
 http://github.com/getmicah/spotify-now
 
+## i3lock-fancy
+
+https://aur.archlinux.org/packages/i3lock-fancy-git/
 
 
