@@ -12,7 +12,7 @@
 
 ## Spotify-now
 
-http://github.com/getmicah/spotify-now
+https://aur.archlinux.org/packages/spotify-now-git
 
 ## i3lock-fancy
 
