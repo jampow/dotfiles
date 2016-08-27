@@ -1,8 +1,8 @@
 au BufNewFile,BufRead *.vm,*.html,*.htm,*.tpl set ft=velocity
 set number
-set tabstop=4
-set shiftwidth=4
-set linespace=0
+"set tabstop=4
+"set shiftwidth=4
+"set linespace=0
 
 " invisible chars
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
@@ -39,7 +39,10 @@ call plug#end()
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
+let g:Powerline_symbols = 'fancy'
 
 let g:open_url_browser="xdg-open"
+
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 colorscheme dracula
