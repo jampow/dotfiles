@@ -18,4 +18,12 @@ https://aur.archlinux.org/packages/spotify-now-git
 
 https://aur.archlinux.org/packages/i3lock-fancy-git/
 
+## Franz
+Chat integrator
 
+https://aur.archlinux.org/packages/franz/
+
+## Playerctl
+Allow you to control players like spotify from commandline
+
+https://aur.archlinux.org/packages/playerctl/

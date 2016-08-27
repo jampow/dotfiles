@@ -261,11 +261,11 @@ exec ~/.dropbox-dist/dropboxd
 # Spotify
 exec spotify
 # toggle play/pause spotify
-bindsym $mod+p exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+bindsym $mod+p exec playerctl play-pause
 # Next
-bindsym $mod+slash exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
+bindsym $mod+slash exec playerctl next
 # Previous
-bindsym $mod+semicolon exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
+bindsym $mod+semicolon exec playerctl previous
 
 # chats
 exec franz
