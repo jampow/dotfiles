@@ -243,8 +243,7 @@ assign [class="Spotify"] $workspace3
 assign [class="Thunderbird"] $workspace4
 
 # workspace 5
-assign [class="Slack"] $workspace5
-assign [class="telegram-desktop"] $workspace5
+assign [class="Franz"] $workspace5
 
 # Screenshots
 bindsym --release Print exec "scrot $HOME/Pictures/screenshots/full-%Y-%m-%d---%H.%M.%S.png"
@@ -268,8 +267,8 @@ bindsym $mod+slash exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.sp
 # Previous
 bindsym $mod+semicolon exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
 
-# Slack
-exec slack
+# chats
+exec franz
 
 # Davmail
 exec davmail
