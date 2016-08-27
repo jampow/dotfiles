@@ -8,6 +8,8 @@ xterm*locale: true
 xterm*metaSendsEscape: true2
 xterm*saveLines: 4096
 xterm*borderWidth: 0
+UXTerm*faceName: Source Code Pro for Powerline
+UXTerm*faceSize: 10
 
 ! ------------------------------------------------------------------------------
 ! ROFI Color theme
