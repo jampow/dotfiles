@@ -4,6 +4,9 @@ set number
 " invisible chars
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 
+" column markers
+set cc=80,120
+
 " gvim config
 set guioptions-=m
 set guioptions-=T
