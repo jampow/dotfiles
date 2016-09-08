@@ -1,8 +1,5 @@
 au BufNewFile,BufRead *.vm,*.html,*.htm,*.tpl set ft=velocity
 set number
-"set tabstop=4
-"set shiftwidth=4
-"set linespace=0
 
 " invisible chars
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
