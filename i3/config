@@ -233,7 +233,9 @@ assign [class="Gnome-terminal"] $workspace1
 assign [class="Gvim"] $workspace1
 
 # workspace 2
-assign [class="chromium"] $workspace2
+assign [class="Chromium"] $workspace2
+assign [class="Google-chrome-unstable"] $workspace2
+assign [class="Google-chrome"] $workspace2
 assign [class="Firefox"] $workspace2
 
 # workspace 3

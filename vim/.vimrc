@@ -13,6 +13,9 @@ set guioptions-=T
 set guioptions-=r
 set guioptions-=L
 
+" fugitive
+set diffopt+=vertical
+
 " VimPlug - Plugins
 call plug#begin('~/.vim/plugged')
 
@@ -34,12 +37,17 @@ Plug 'wakatime/vim-wakatime'
 Plug 'sirver/ultisnips'
 Plug 'lilydjwg/colorizer'
 Plug 'henrik/vim-open-url'
+Plug 'wookiehangover/jshint.vim'
+Plug 'grep.vim'
 
 call plug#end()
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
+let g:airline_theme = 'bubblegum'
 let g:Powerline_symbols = 'fancy'
+
+let JSHintUpdateWriteOnly=1
 
 let g:open_url_browser="xdg-open"
 

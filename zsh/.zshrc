@@ -94,7 +94,13 @@ export PATH="$PATH:$HOME/bin"
 
 # NPM
 NPM_PACKAGES="${HOME}/.npm-packages"
-PATH="$NPM_PACKAGES/bin:$PATH"
+
+# Webdrivers
+WEBDRIVERS="${HOME}/.webdrivers"
+
+PATH="$NPM_PACKAGES/bin:$WEBDRIVERS:$PATH"
+
+
 
 export TERM="xterm-256color"
 
