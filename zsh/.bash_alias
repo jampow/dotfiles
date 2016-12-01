@@ -4,15 +4,7 @@ alias ls="ls --color=auto"
 
 alias ff="find . -name "
 
-alias tcl="cd ~/uol/templatecache-local/; ./run.sh 9090"
-alias tcl80="cd ~/uol/templatecache-local/; sudo ./run.sh 80"
-alias tclqa="cd ~/uol/templatecache-local-qa/; ./run.sh 9191"
 alias hosts="sudo vim /etc/hosts"
-
-alias flcommons="perl /home/gsoares/uol/templatecache-local/filecommons.pl"
-alias flsmb="/home/gsoares/uol/templatecache-local/filesamba.rb"
-
-alias envuol="zsh ${HOME}/uol/envuol.zsh"
 
 alias android2.1="cd ~/vms/android_sdk/sdk/tools; ./emulator -avd v2.1 -partition-size 512"
 alias android2.3="cd ~/vms/android_sdk/sdk/tools; ./emulator -avd v2.3 -partition-size 512"
@@ -26,9 +18,6 @@ alias gdd="git deploy deploy"
 alias gddd="git deploy deploy --mode=debug"
 alias gddc="git deploy deploy -c"
 alias gdc="git deploy cache"
-
-alias mm="sudo mount -t cifs -o user=gsoares //moises/dcu_interface_arte /home/gsoares/moises/interface_arte"
-alias umm="sudo umount //moises/dcu_interface_arte"
 
 #switch keyboard to fix typing on synergy client
 alias kbmac="setxkbmap us"
