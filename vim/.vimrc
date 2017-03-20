@@ -39,12 +39,14 @@ Plug 'lilydjwg/colorizer'
 Plug 'henrik/vim-open-url'
 Plug 'wookiehangover/jshint.vim'
 Plug 'grep.vim'
+Plug 'tpope/vim-unimpaired'
+Plug 'jgallen23/runcode.vim'
 
 call plug#end()
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'bubblegum'
+let g:airline_theme = 'dracula'
 let g:Powerline_symbols = 'fancy'
 
 let JSHintUpdateWriteOnly=1
@@ -54,3 +56,8 @@ let g:open_url_browser="xdg-open"
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 colorscheme dracula
+
+" Salva quando fecha e carrega os trechos colapsados de cada arquivo quando
+" abre
+autocmd BufWinLeave *.* mkview
+autocmd BufWinEnter *.* silent loadview 

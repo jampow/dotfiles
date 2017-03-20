@@ -184,6 +184,40 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+
+# launcher mode
+mode "launcher" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        bindsym c exec google-chrome-unstable
+        bindsym d exec google-chrome-unstable --ignore-certificate-errors
+        bindsym g exec gvim
+        bindsym t exec thunar
+        bindsym s exec spotify
+        bindsym f exec franz
+        bindsym e exec thunderbird
+        bindsym x exec firefox
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+u mode "launcher"
+
+# murder mode
+mode "killing..." {
+        # These bindings trigger as soon as you enter the resize mode
+
+        bindsym c exec killall chrome && killall chromium
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+i mode "killing..."
+
 # Widow Colours
 #                       border  background text    indicator
 client.focused          $base01 $base01    $base07 $base0F
@@ -260,8 +294,6 @@ exec_always compton -f
 # Dropbox
 exec ~/.dropbox-dist/dropboxd
 
-# Spotify
-exec spotify
 # toggle play/pause spotify
 bindsym $mod+p exec playerctl play-pause
 # Next
@@ -269,14 +301,8 @@ bindsym $mod+slash exec playerctl next
 # Previous
 bindsym $mod+semicolon exec playerctl previous
 
-# chats
-exec franz
-
 # Davmail
 exec davmail
-
-# Thunderbird
-exec thunderbird
 
 # synergy server
 exec synergys
