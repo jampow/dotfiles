@@ -41,6 +41,7 @@ Plug 'wookiehangover/jshint.vim'
 Plug 'grep.vim'
 Plug 'tpope/vim-unimpaired'
 Plug 'jgallen23/runcode.vim'
+Plug 'mileszs/ack.vim'
 
 call plug#end()
 
