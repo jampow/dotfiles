@@ -2,7 +2,7 @@ au BufNewFile,BufRead *.vm,*.html,*.htm,*.tpl set ft=velocity
 set number
 
 " invisible chars
-set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<,space:.
 
 " column markers
 set cc=80,120
