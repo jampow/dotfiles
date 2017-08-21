@@ -4,6 +4,9 @@ set number
 " invisible chars
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<,space:.
 
+" swap files far away from the project folders
+set directory=$HOME/.vim/swapfiles//
+
 " column markers
 set cc=80,120
 
