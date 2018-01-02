@@ -7,6 +7,9 @@ set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<,space:.
 " swap files far away from the project folders
 set directory=$HOME/.vim/swapfiles//
 
+" powerline font
+set guifont=Meslo\ LG\ S\ for\ Powerline:h10
+
 " column markers
 set cc=80,120
 
