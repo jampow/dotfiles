@@ -103,3 +103,5 @@ export TERM="xterm-256color"
 
 unset MANPATH
 export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
+
+#eval "$(rbenv init -)"
