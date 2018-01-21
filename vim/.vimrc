@@ -48,6 +48,7 @@ Plug 'grep.vim'
 Plug 'tpope/vim-unimpaired'
 Plug 'jgallen23/runcode.vim'
 Plug 'mileszs/ack.vim'
+Plug 'valloric/youcompleteme'
 
 call plug#end()
 
