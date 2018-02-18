@@ -1,0 +1,3 @@
+EditorConfig.EditorConfig
+vscodevim.vim
+WakaTime.vscode-wakatime
