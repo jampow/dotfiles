@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-code --list-extensions > installedExtensions.txt
+code --list-extensions > extensions.txt
