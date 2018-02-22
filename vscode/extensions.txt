@@ -1,3 +1,5 @@
 EditorConfig.EditorConfig
-vscodevim.vim
 WakaTime.vscode-wakatime
+ryanluker.vscode-coverage-gutters
+vscodevim.vim
+xabikos.ReactSnippets
