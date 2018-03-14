@@ -1,5 +1,7 @@
 EditorConfig.EditorConfig
 WakaTime.vscode-wakatime
+WallabyJs.quokka-vscode
+chenxsan.vscode-standardjs
 ryanluker.vscode-coverage-gutters
 vscodevim.vim
 xabikos.ReactSnippets
