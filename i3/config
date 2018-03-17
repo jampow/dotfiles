@@ -265,7 +265,7 @@ bindsym $mod+period exec amixer set Master 5%+
 bindsym $mod+m exec pactl set-sink-mute 0 toggle
 
 # Wallpaper
-exec_always feh --bg-scale /home/gsoares/Pictures/wallpapers/wp1.jpg
+exec_always feh --bg-max --randomize $HOME/Pictures/wallpapers/*
 
 # Autoassign apps to workspaces
 # workspace 1
