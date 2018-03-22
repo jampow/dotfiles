@@ -1,4 +1,5 @@
 EditorConfig.EditorConfig
+PeterJausovec.vscode-docker
 WakaTime.vscode-wakatime
 WallabyJs.quokka-vscode
 chenxsan.vscode-standardjs
