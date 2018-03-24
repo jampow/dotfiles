@@ -189,7 +189,7 @@ bindsym $mod+r mode "resize"
 mode "launcher" {
         # These bindings trigger as soon as you enter the resize mode
 
-        bindsym c exec google-chrome-stable
+        bindsym c exec google-chrome
         bindsym d exec google-chrome-unstable 
         bindsym g exec gvim
         bindsym t exec thunar
