@@ -117,12 +117,12 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-set $workspace1 "1: "
-set $workspace2 "2: "
-set $workspace3 "3: "
-set $workspace4 "4: "
-set $workspace5 "5: "
-set $workspace6 "6"
+set $workspace1 "1: "
+set $workspace2 "2: "
+set $workspace3 "3: "
+set $workspace4 "4: "
+set $workspace5 "5: "
+set $workspace6 "6: "
 set $workspace7 "7"
 set $workspace8 "8"
 set $workspace9 "9"
@@ -270,21 +270,22 @@ exec_always feh --bg-max --randomize $HOME/Pictures/wallpapers/*
 # Autoassign apps to workspaces
 # workspace 1
 assign [class="Gnome-terminal"] $workspace1
-assign [class="Gvim"] $workspace1
 
 # workspace 2
-assign [class="Chromium"] $workspace2
-assign [class="Google-chrome-unstable"] $workspace2
-assign [class="Google-chrome"] $workspace2
-assign [class="Firefox"] $workspace2
+assign [class="Gvim"] $workspace2
+assign [class="Code"] $workspace2
 
 # workspace 3
-assign [class="Spotify"] $workspace3
+assign [class="Chromium"] $workspace3
+assign [class="Google-chrome-unstable"] $workspace3
+assign [class="Google-chrome"] $workspace3
+assign [class="Firefox"] $workspace3
 
 # workspace 4
-assign [class="Thunderbird"] $workspace4
+assign [class="Spotify"] $workspace4
 
 # workspace 5
+assign [class="Thunderbird"] $workspace5
 assign [class="Franz"] $workspace5
 
 # Screenshots
