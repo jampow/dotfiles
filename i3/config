@@ -159,14 +159,13 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
+for_window [title=cheatsheet] floating enable
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+        bindsym shift+question exec cheatsheet "resize"
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
+        # These bindings trigger as soon as you enter the resize mode
         bindsym j resize shrink width 5 px or 5 ppt
         bindsym k resize grow height 5 px or 5 ppt
         bindsym l resize shrink height 5 px or 5 ppt
@@ -187,7 +186,7 @@ bindsym $mod+r mode "resize"
 
 # launcher mode
 mode "launcher" {
-        # These bindings trigger as soon as you enter the resize mode
+        bindsym shift+question exec cheatsheet launcher
 
         bindsym c exec google-chrome
         bindsym d exec google-chrome-unstable 
@@ -207,7 +206,7 @@ bindsym $mod+u mode "launcher"
 
 # murder mode
 mode "killing..." {
-        # These bindings trigger as soon as you enter the resize mode
+        bindsym shift+question exec cheatsheet killing...
 
         bindsym c exec killall chrome && killall chromium
         bindsym g exec killall gvim
