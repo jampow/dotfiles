@@ -223,6 +223,26 @@ mode "killing..." {
 
 bindsym $mod+i mode "killing..."
 
+# screenshot mode
+mode "shoting" {
+        bindsym shift+question exec cheatsheet shoting
+
+        bindsym s exec scrot -e 'mv $f ~/Pictures/scrot-`date +%F_%T`.png'
+        bindsym a exec scrot -u -e 'mv $f ~/Pictures/scrot-`date +%F_%T`.png'
+        bindsym f exec scrot -e 'mv $f ~/Pictures/scrot-`date +%F_%T`.png'
+
+	bindsym j focus left
+	bindsym k focus down
+	bindsym l focus up
+	bindsym ccedilla focus right
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+b mode "shoting"
+
 # Widow Colours
 #                       border  background text    indicator
 client.focused          $base01 $base01    $base07 $base0F
