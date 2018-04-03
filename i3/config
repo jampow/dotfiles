@@ -286,10 +286,6 @@ bindsym $mod+m exec pactl set-sink-mute 0 toggle
 # Wallpaper
 exec_always feh --bg-max --randomize $HOME/Pictures/wallpapers/*
 
-# Autoassign apps to workspaces
-# workspace 1
-assign [class="Gnome-terminal"] $workspace1
-
 # workspace 2
 assign [class="Gvim"] $workspace2
 assign [class="Code"] $workspace2
