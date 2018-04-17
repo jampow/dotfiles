@@ -31,7 +31,7 @@ set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:System San Francisco Display 8
+font pango:System San Francisco Display, FontAwesome 8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -162,8 +162,8 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 for_window [title=cheatsheet] floating enable
 
 # resize window (you can also use the mouse for that)
-mode "resize" {
-        bindsym shift+question exec cheatsheet "resize"
+mode "" {
+        bindsym shift+question exec cheatsheet ""
 
         # These bindings trigger as soon as you enter the resize mode
         bindsym j resize shrink width 5 px or 5 ppt
@@ -182,11 +182,11 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-bindsym $mod+r mode "resize"
+bindsym $mod+r mode ""
 
 # launcher mode
-mode "launcher" {
-        bindsym shift+question exec cheatsheet launcher
+mode "" {
+        bindsym shift+question exec cheatsheet 
 
         bindsym c exec google-chrome
         bindsym d exec google-chrome-unstable 
@@ -202,11 +202,11 @@ mode "launcher" {
         bindsym Escape mode "default"
 }
 
-bindsym $mod+u mode "launcher"
+bindsym $mod+u mode ""
 
 # murder mode
-mode "killing..." {
-        bindsym shift+question exec cheatsheet killing...
+mode "" {
+        bindsym shift+question exec cheatsheet 
 
         bindsym c exec killall chrome && killall chromium
         bindsym g exec killall gvim
@@ -221,11 +221,11 @@ mode "killing..." {
         bindsym Escape mode "default"
 }
 
-bindsym $mod+i mode "killing..."
+bindsym $mod+i mode ""
 
 # screenshot mode
-mode "shoting" {
-        bindsym shift+question exec cheatsheet shoting
+mode "" {
+        bindsym shift+question exec cheatsheet 
 
         bindsym s exec scrot -e 'mv $f ~/Pictures/scrot-`date +%F_%T`.png'
         bindsym a exec scrot -u -e 'mv $f ~/Pictures/scrot-`date +%F_%T`.png'
@@ -241,7 +241,7 @@ mode "shoting" {
         bindsym Escape mode "default"
 }
 
-bindsym $mod+b mode "shoting"
+bindsym $mod+b mode ""
 
 # Widow Colours
 #                       border  background text    indicator
@@ -257,7 +257,7 @@ hide_edge_borders both
 bar {
 	#status_command i3status
     font pango: System San Francisco Display, FontAwesome 8
-	status_command i3blocks -c ~/.config/i3/i3blocks.conf
+    status_command i3blocks -c ~/.config/i3/i3blocks.conf
     position bottom
     # strip_workspace_numbers yes
 	# height 25
