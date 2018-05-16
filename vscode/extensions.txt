@@ -2,7 +2,10 @@ EditorConfig.EditorConfig
 PeterJausovec.vscode-docker
 WakaTime.vscode-wakatime
 WallabyJs.quokka-vscode
+WallabyJs.wallaby-vscode
 chenxsan.vscode-standardjs
+eamodio.gitlens
+mquandalle.graphql
 ryanluker.vscode-coverage-gutters
 vscodevim.vim
 xabikos.ReactSnippets
