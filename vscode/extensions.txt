@@ -5,7 +5,9 @@ WallabyJs.quokka-vscode
 WallabyJs.wallaby-vscode
 chenxsan.vscode-standardjs
 eamodio.gitlens
+mikestead.dotenv
 mquandalle.graphql
+msjsdiag.debugger-for-chrome
 ryanluker.vscode-coverage-gutters
 vscodevim.vim
 xabikos.ReactSnippets
