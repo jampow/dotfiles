@@ -1,4 +1,6 @@
+AravindKumar.gherkin-indent
 EditorConfig.EditorConfig
+Orta.vscode-jest
 PeterJausovec.vscode-docker
 WakaTime.vscode-wakatime
 WallabyJs.quokka-vscode
