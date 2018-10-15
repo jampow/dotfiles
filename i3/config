@@ -49,7 +49,7 @@ floating_modifier $mod
 
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec gnome-terminal -e 'tmux -2 a'
+bindsym $mod+Return exec termite -e 'tmux -2 a'
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -276,11 +276,11 @@ bar {
 }
 
 # screen lock
-bindsym $mod+shift+o exec i3lock-color
+bindsym $mod+shift+o exec i3lock-fancy-rapid 5 3
 
 # volume binds
-bindsym $mod+comma exec amixer set Master 5%-
-bindsym $mod+period exec amixer set Master 5%+
+bindsym $mod+comma exec amixer set Master 1%-
+bindsym $mod+period exec amixer set Master 1%+
 bindsym $mod+m exec pactl set-sink-mute 0 toggle
 
 # Wallpaper
@@ -288,7 +288,7 @@ exec_always feh --bg-max --randomize $HOME/Pictures/wallpapers/*
 
 # workspace 2
 assign [class="Gvim"] $workspace2
-assign [class="Code"] $workspace2
+assign [class="code"] $workspace2
 
 # workspace 3
 assign [class="Chromium"] $workspace3
@@ -323,8 +323,8 @@ bindsym $mod+slash exec playerctl next
 # Previous
 bindsym $mod+semicolon exec playerctl previous
 
-# Davmail
-exec davmail
+# twmnd (notifications server)
+exec twmnd
 
 # synergy server
-exec synergys
+#exec synergys
