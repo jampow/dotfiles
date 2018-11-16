@@ -1,0 +1,10 @@
+#!/bin/bash
+
+mode_pattern="^mode \"$1\""
+
+first_line=$(grep -m 1 -n "$mode_pattern" ~/.config/i3/config | cut -f1 -d:)
+last_line=$(tail -n +$first_line ~/.config/i3/config | grep -m 1 -n '^}' | cut -f1 -d:)
+
+tail -n +$first_line ~/.config/i3/config | head -$last_line > /tmp/cheatsheet
+
+gnome-terminal --tab -t cheatsheet -e "less /tmp/cheatsheet"
