@@ -55,7 +55,7 @@ fi
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z tmux node archlinux chucknorris colored-man-pages frontend-search iwhois jira lein docker docker-compose nvm)
+plugins=(git z tmux node archlinux colored-man-pages frontend-search iwhois jira lein docker docker-compose nvm)
 
 # User configuration
 
@@ -106,3 +106,5 @@ export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 
 #eval "$(rbenv init -)"
 source /usr/share/nvm/init-nvm.sh
+
+alias dfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'

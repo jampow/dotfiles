@@ -24,6 +24,13 @@ set diffopt+=vertical
 " VimPlug - Plugins
 call plug#begin('~/.vim/plugged')
 
+" autocomplete
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugin' }
+else
+  Plug 'valloric/youcompleteme', { 'do': './install.py --tern-completer' }
+endif
+
 Plug 'arcticicestudio/nord-vim'
 Plug 'kien/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
@@ -44,7 +51,6 @@ Plug 'lilydjwg/colorizer'
 Plug 'tpope/vim-unimpaired'
 Plug 'jgallen23/runcode.vim'
 Plug 'ervandew/ag'
-Plug 'valloric/youcompleteme', { 'do': './install.py --tern-completer' }
 Plug 'mxw/vim-jsx'
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'moll/vim-node'
@@ -90,6 +96,7 @@ let g:ctrlp_custom_ignore = {
 let g:ycm_min_num_of_chars_for_completion = 4
 let g:ycm_min_num_identifier_candidate_chars = 4
 let g:ycm_enable_diagnostic_highlighting = 0
+let g:deoplete#enable_at_startup = 1
 
 " unicode symbols
 let g:airline_left_sep = '»'
@@ -125,7 +132,9 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 colorscheme nord
 
-" Salva quando fecha e carrega os trechos colapsados de cada arquivo quando
-" abre
-autocmd BufWinLeave *.* mkview
-autocmd BufWinEnter *.* silent loadview 
+if !has('nvim')
+  " Salva quando fecha e carrega os trechos colapsados de cada arquivo quando
+  " abre
+  autocmd BufWinLeave *.* mkview
+  autocmd BufWinEnter *.* silent loadview 
+endif
