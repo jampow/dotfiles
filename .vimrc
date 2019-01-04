@@ -130,6 +130,9 @@ let g:open_url_browser="xdg-open"
 
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
+set wildmenu
+set wildmode=longest:full,full
+
 colorscheme nord
 
 if !has('nvim')
