@@ -1,5 +1,5 @@
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
-xset r rate 250 50
+xset r rate 250 150
 setxkbmap br
 exec i3
