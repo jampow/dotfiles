@@ -55,7 +55,7 @@ fi
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z tmux node archlinux colored-man-pages frontend-search iwhois jira lein docker docker-compose nvm)
+plugins=(git z node archlinux colored-man-pages frontend-search jira lein docker docker-compose nvm)
 
 # User configuration
 
@@ -91,7 +91,7 @@ source $ZSH/oh-my-zsh.sh
 
 # ZSH_TMUX_AUTOSTART_ONCE=true
 
-export PATH="$PATH:$HOME/bin"
+export PATH="$HOME/bin:$PATH"
 
 # NPM
 NPM_PACKAGES="${HOME}/.npm-packages"
@@ -105,6 +105,10 @@ unset MANPATH
 export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 
 #eval "$(rbenv init -)"
-source /usr/share/nvm/init-nvm.sh
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 
 alias dfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+

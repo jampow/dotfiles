@@ -256,8 +256,8 @@ hide_edge_borders both
 # finds out, if available)
 bar {
 	status_command $HOME/bin/projects/bumblebee-status/bumblebee-status \
-		-m spotify amixer docker_ps publicip pacman memory disk arch-update battery uptime datetime \
-		-p disk.showSize="no" memory.format="{used} ({percent:04.02f}%)" \
+		-m spotify docker_ps publicip memory disk amixer xrandr battery datetimetz \
+		-p memory.format="{percent:04.02f}%" disk.showUsed="no" disk.showSize="no" datetimetz.format="%a, %d/%m %H:%M" \
 		-t iceberg-dark-powerline
         # strip_workspace_numbers yes
 	# height 25
