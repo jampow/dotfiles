@@ -278,7 +278,7 @@ bar {
 }
 
 # screen lock
-bindsym $mod+shift+o exec i3lock-fancy-rapid 5 3
+bindsym $mod+shift+o exec "playerctl pause; i3lock-fancy-rapid 5 3"
 
 # volume binds
 bindsym $mod+comma exec amixer set Master 1%-
