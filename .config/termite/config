@@ -4,8 +4,9 @@
 #bold_is_bright = true
 #clickable_url = true
 #dynamic_title = true
-font = Monospace 9
-font = DejaVu Sans Mono 9
+#font = Monospace 9
+font = Liberation Mono 9
+#font = DejaVu Sans Mono 9
 #fullscreen = true
 #icon_name = terminal
 #mouse_autohide = false
@@ -47,10 +48,10 @@ scrollback_lines = 10000
 
 foreground = #5e81ac
 foreground_bold = #ffffff
-background = #2e3440
+#background = #2e3440
 
 # 20% background transparency (requires a compositor)
-#background = rgba(63, 63, 63, 0.8)
+background = rgba(46, 52, 64, 0.8)
 
 # If unset, will reverse foreground and background
 highlight = #c5cfe0
