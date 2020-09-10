@@ -199,8 +199,6 @@ mode "" {
         bindsym g exec gvim
         bindsym t exec thunar
         bindsym s exec spotify
-        bindsym f exec franz
-        bindsym e exec thunderbird
         bindsym x exec firefox
 
         # back to normal: Enter or Escape
@@ -218,8 +216,6 @@ mode "" {
         bindsym g exec killall gvim
         bindsym t exec killall thunar
         bindsym s exec killall spotify
-        bindsym f exec killall franz
-        bindsym e exec killall thunderbird
         bindsym x exec killall firefox
 
         # back to normal: Enter or Escape
@@ -233,7 +229,7 @@ bindsym $mod+i mode ""
 mode "" {
         bindsym shift+question exec cheatsheet 
 
-        bindsym s exec scrot -e 'mv $f ~/Pictures/scrot-`date +%F_%T`.png'
+        bindsym s exec scrot -s -e 'mv $f ~/Pictures/scrot-`date +%F_%T`.png'
         bindsym a exec scrot -u -e 'mv $f ~/Pictures/scrot-`date +%F_%T`.png'
         bindsym f exec scrot -e 'mv $f ~/Pictures/scrot-`date +%F_%T`.png'
 
