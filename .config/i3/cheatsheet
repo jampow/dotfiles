@@ -7,4 +7,4 @@ last_line=$(tail -n +$first_line ~/.config/i3/config | grep -m 1 -n '^}' | cut -
 
 tail -n +$first_line ~/.config/i3/config | head -$last_line > /tmp/cheatsheet
 
-gnome-terminal --tab -t cheatsheet -e "less /tmp/cheatsheet"
+termite -t cheatsheet -e "less /tmp/cheatsheet"
