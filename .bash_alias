@@ -9,3 +9,9 @@ alias hosts="sudo vim /etc/hosts"
 #switch keyboard to fix typing on synergy client
 alias kbmac="setxkbmap us"
 alias kbnix="setxkbmap br"
+
+mkcd()
+{
+  mkdir -p $1 &&
+  cd $1
+}
