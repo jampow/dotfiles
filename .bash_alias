@@ -6,19 +6,6 @@ alias ff="find . -name "
 
 alias hosts="sudo vim /etc/hosts"
 
-alias android2.1="cd ~/vms/android_sdk/sdk/tools; ./emulator -avd v2.1 -partition-size 512"
-alias android2.3="cd ~/vms/android_sdk/sdk/tools; ./emulator -avd v2.3 -partition-size 512"
-alias android3.0="cd ~/vms/android_sdk/sdk/tools; ./emulator -avd v3.0 -partition-size 512"
-alias android4.0="cd ~/vms/android_sdk/sdk/tools; ./emulator -avd v4.0 -partition-size 512"
-alias android4.2="cd ~/vms/android_sdk/sdk/tools; ./emulator -avd v4.2 -partition-size 512"
-alias androidHosts="subl ~/android_hosts"
-alias androidUpdateHosts="adb remount; adb push ~/android_hosts /etc/hosts"
-
-alias gdd="git deploy deploy"
-alias gddd="git deploy deploy --mode=debug"
-alias gddc="git deploy deploy -c"
-alias gdc="git deploy cache"
-
 #switch keyboard to fix typing on synergy client
 alias kbmac="setxkbmap us"
 alias kbnix="setxkbmap br"
