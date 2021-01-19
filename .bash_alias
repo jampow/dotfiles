@@ -10,6 +10,10 @@ alias hosts="sudo vim /etc/hosts"
 alias kbmac="setxkbmap us"
 alias kbnix="setxkbmap br"
 
+alias vpn="sudo openfortivpn"
+
+alias akamai-debug="curl -H 'user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36' -H 'Pragma: akamai-x-cache-on, akamai-x-cache-remote-on, akamai-x-check-cacheable, akamai-x-get-cache-key, akamai-x-get-true-cache-key, akamai-x-get-extracted-values, akamai-x-get-ssl-client-session-id, akamai-x-serial-no, akamai-x-get-request-id'"
+
 mkcd()
 {
   mkdir -p $1 &&
