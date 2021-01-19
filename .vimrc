@@ -1,7 +1,8 @@
 set encoding=utf-8
-set number
 set termguicolors!
 syntax on
+
+set number relativenumber
 
 " invisible chars
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<,space:.
@@ -26,7 +27,7 @@ call plug#begin('~/.vim/plugged')
 
 " autocomplete
 if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugin' }
+  Plug 'neoclide/coc.nvim'
 else
   Plug 'valloric/youcompleteme', { 'do': './install.py --tern-completer' }
 endif
@@ -141,3 +142,15 @@ if !has('nvim')
   autocmd BufWinLeave *.* mkview
   autocmd BufWinEnter *.* silent loadview 
 endif
+
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
