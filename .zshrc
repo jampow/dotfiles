@@ -1,6 +1,4 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block, everything else may go below.
+# OK to perform console I/O before this point.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -19,6 +17,8 @@ ZSH_THEME="bira"
 if [ -f ~/.bash_alias ]; then
   . ~/.bash_alias
 fi
+
+export NVM_AUTOLOAD=1
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
