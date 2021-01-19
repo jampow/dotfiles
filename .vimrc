@@ -45,17 +45,17 @@ Plug 'airblade/vim-gitgutter'
 Plug 'lepture/vim-velocity'
 Plug 'scrooloose/nerdcommenter'
 Plug 'easymotion/vim-easymotion'
-Plug 'maksimr/vim-jsbeautify'
 Plug 'wakatime/vim-wakatime'
 Plug 'sirver/ultisnips'
 Plug 'lilydjwg/colorizer'
 Plug 'tpope/vim-unimpaired'
 Plug 'jgallen23/runcode.vim'
 Plug 'ervandew/ag'
-Plug 'mxw/vim-jsx'
-Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'moll/vim-node'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'pangloss/vim-javascript'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'maxmellon/vim-jsx-pretty'
 
 call plug#end()
 
