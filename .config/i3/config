@@ -305,13 +305,16 @@ assign [class="Spotify"] $workspace4
 assign [class="Thunderbird"] $workspace5
 assign [class="Franz"] $workspace5
 
+# Teams notification sucks
+for_window [class="Microsoft Teams - Insiders"] floating enable
+
 # Screenshots
 bindsym --release Print exec "scrot $HOME/Pictures/screenshots/full-%Y-%m-%d---%H.%M.%S.png"
 bindsym --release Shift+Print exec "scrot -d 1 -s $HOME/Pictures/screenshots/selection-%Y-%m-%d---%h.%M.%s.png"
 bindsym --release Control+Shift+Print exec "scrot -u $HOME/Pictures/screenshots/window-%Y-%m-%d---%h.%M.%s.png"
 
 # Transparencies
-exec_always compton -f
+# exec_always compton -f
 
 # Inicializações automáticas
 
