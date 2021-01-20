@@ -167,6 +167,9 @@ bindsym $mod+Shift+minus move scratchpad
 # Show the first scratchpad window
 bindsym $mod+minus scratchpad show
 
+# Stick mode
+bindsym $mod+equal sticky toggle
+
 # resize window (you can also use the mouse for that)
 mode "" {
         bindsym shift+question exec cheatsheet ""
