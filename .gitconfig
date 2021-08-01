@@ -35,8 +35,6 @@
 	newHighlight = green bold 22
 [credential]
 	helper = store
-[url "ssh://git@github.com/"]
-	insteadOf = https://github.com/
 [pull]
 	ff = only
 [pager]
