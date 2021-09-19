@@ -161,6 +161,10 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 for_window [title=cheatsheet] floating enable
 
+# remove title bar
+default_border pixel 1
+default_floating_border pixel 1
+
 #Scratchpad 
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+minus move scratchpad
