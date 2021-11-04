@@ -32,30 +32,35 @@ else
   Plug 'valloric/youcompleteme', { 'do': './install.py --tern-completer' }
 endif
 
-Plug 'arcticicestudio/nord-vim'
-Plug 'kien/ctrlp.vim'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'mattn/emmet-vim'
-Plug 'scrooloose/nerdtree'
-Plug 'jpo/vim-railscasts-theme'
-Plug 'bling/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'lepture/vim-velocity'
-Plug 'scrooloose/nerdcommenter'
+Plug 'arcticicestudio/nord-vim'
+Plug 'bling/vim-airline'
+Plug 'dart-lang/dart-vim-plugin'
 Plug 'easymotion/vim-easymotion'
-Plug 'wakatime/vim-wakatime'
-Plug 'sirver/ultisnips'
-Plug 'lilydjwg/colorizer'
-Plug 'tpope/vim-unimpaired'
-Plug 'jgallen23/runcode.vim'
+Plug 'editorconfig/editorconfig-vim'
 Plug 'ervandew/ag'
-Plug 'moll/vim-node'
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-Plug 'pangloss/vim-javascript'
 Plug 'HerringtonDarkholme/yats.vim'
+Plug 'jgallen23/runcode.vim'
+Plug 'jpo/vim-railscasts-theme'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'lepture/vim-velocity'
+Plug 'lilydjwg/colorizer'
+Plug 'mattn/emmet-vim'
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'moll/vim-node'
+Plug 'natebosch/vim-lsc'
+Plug 'natebosch/vim-lsc-dart'
+Plug 'pangloss/vim-javascript'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'sirver/ultisnips'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'thosakwe/vim-flutter'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-unimpaired'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'wakatime/vim-wakatime'
 
 call plug#end()
 
@@ -63,12 +68,6 @@ call plug#end()
 if executable('ag')
   " Use ag over grep
   set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
 endif
 
 let g:airline#extensions#tabline#enabled = 1
@@ -86,12 +85,7 @@ endif
 set wildignore+=*/node_modules/*,*/dist/*,*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 set wildignore+=*\\node_modules\\*,*\\dist\\*,*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v\.(exe|so|dll)$',
-  \ 'link': 'some_bad_symbolic_links',
-  \ }
+nmap <C-P> :FZF<CR>
 
 " Start autocompletion after 4 chars
 let g:ycm_min_num_of_chars_for_completion = 4
@@ -135,6 +129,9 @@ set wildmenu
 set wildmode=longest:full,full
 
 colorscheme nord
+
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
 
 if !has('nvim')
   " Salva quando fecha e carrega os trechos colapsados de cada arquivo quando
