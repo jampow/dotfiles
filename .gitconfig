@@ -26,6 +26,7 @@
 [core]
 	autocrlf = false
 	fileMode = false
+	editor = vim
 [diff]
 	submodule = log
 [color "diff-highlight"]
