@@ -232,24 +232,25 @@ mode "" {
 bindsym $mod+i mode ""
 
 # screenshot mode
-mode "" {
-        bindsym shift+question exec cheatsheet 
+bindsym $mod+b exec "flameshot gui"
+#mode "" {
+        #bindsym shift+question exec cheatsheet 
 
-        bindsym s exec scrot -s -e 'mv $f ~/Pictures/scrot-`date +%F_%T`.png'
-        bindsym a exec scrot -u -e 'mv $f ~/Pictures/scrot-`date +%F_%T`.png'
-        bindsym f exec scrot -e 'mv $f ~/Pictures/scrot-`date +%F_%T`.png'
+        #bindsym s exec scrot -s -e 'mv $f ~/Pictures/scrot-`date +%F_%T`.png'
+        #bindsym a exec scrot -u -e 'mv $f ~/Pictures/scrot-`date +%F_%T`.png'
+        #bindsym f exec scrot -e 'mv $f ~/Pictures/scrot-`date +%F_%T`.png'
 
-	bindsym j focus left
-	bindsym k focus down
-	bindsym l focus up
-	bindsym ccedilla focus right
+	#bindsym j focus left
+	#bindsym k focus down
+	#bindsym l focus up
+	#bindsym ccedilla focus right
 
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
+        ## back to normal: Enter or Escape
+        #bindsym Return mode "default"
+        #bindsym Escape mode "default"
+#}
 
-bindsym $mod+b mode ""
+#bindsym $mod+b mode ""
 
 # Widow Colours
 #                       border  background text    indicator
@@ -326,6 +327,9 @@ bindsym --release Control+Shift+Print exec "scrot -u $HOME/Pictures/screenshots/
 
 # Dropbox
 exec ~/.dropbox-dist/dropboxd
+
+# Flameshot (screenshots)
+exec flameshot
 
 # toggle play/pause spotify
 bindsym $mod+p exec playerctl play-pause
