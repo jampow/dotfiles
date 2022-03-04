@@ -55,4 +55,5 @@ colors:
     cyan: "#6d96a5"
     white: "#aeb3bb"
 
-background_opacity: 0.8
+window:
+  opacity: 0.8
