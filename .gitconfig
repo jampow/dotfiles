@@ -48,7 +48,7 @@
 [delta]
     plus-style = "syntax #012800"
     minus-style = "syntax #340001"
-    syntax-theme = Monokai Extended
+    syntax-theme = Nord
     navigate = true
     side-by-side = true
 
