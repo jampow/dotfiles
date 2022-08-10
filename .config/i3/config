@@ -197,60 +197,35 @@ mode "" {
 bindsym $mod+r mode ""
 
 # launcher mode
-mode "" {
-        bindsym shift+question exec cheatsheet 
-
+mode "$mode_launcher" {
         bindsym c exec google-chrome-stable
         bindsym d exec google-chrome-unstable 
-        bindsym g exec gvim
-        bindsym t exec thunar
+        bindsym l exec alacritty -e lvim
         bindsym s exec spotify
-        bindsym x exec firefox
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
 
-bindsym $mod+u mode ""
+set $mode_launcher : [c]hrome stable [d]chrome unstable [s]potify [l]vim
+bindsym $mod+u mode "$mode_launcher"
 
 # murder mode
-mode "" {
-        bindsym shift+question exec cheatsheet 
-
+mode "$mode_murder" {
         bindsym c exec killall chrome && killall chromium
-        bindsym g exec killall gvim
-        bindsym t exec killall thunar
         bindsym s exec killall spotify
-        bindsym x exec killall firefox
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
 
-bindsym $mod+i mode ""
+set $mode_murder : [c]hrome [s]potify [l]vim
+bindsym $mod+i mode "$mode_murder"
 
-# screenshot mode
+# screenshot 
 bindsym $mod+b exec "flameshot gui"
-#mode "" {
-        #bindsym shift+question exec cheatsheet 
-
-        #bindsym s exec scrot -s -e 'mv $f ~/Pictures/scrot-`date +%F_%T`.png'
-        #bindsym a exec scrot -u -e 'mv $f ~/Pictures/scrot-`date +%F_%T`.png'
-        #bindsym f exec scrot -e 'mv $f ~/Pictures/scrot-`date +%F_%T`.png'
-
-	#bindsym j focus left
-	#bindsym k focus down
-	#bindsym l focus up
-	#bindsym ccedilla focus right
-
-        ## back to normal: Enter or Escape
-        #bindsym Return mode "default"
-        #bindsym Escape mode "default"
-#}
-
-#bindsym $mod+b mode ""
 
 # Widow Colours
 #                       border  background text    indicator
