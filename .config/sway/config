@@ -59,7 +59,8 @@ bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec bemenu_run
-bindsym $mod+d exec rofi -show run -lines 3 -width 20 -padding 10 -opacity "85" -font "System San Francisco Display 13" -config $HOME/.config/rofi/config -hide-scrollbar
+bindsym $mod+d exec rofi -show run
+# -lines 3 -width 20 -padding 10 -opacity "85" -font "System San Francisco Display 13" -config $HOME/.config/rofi/config -hide-scrollbar
 
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
@@ -199,59 +200,35 @@ mode "" {
 bindsym $mod+r mode ""
 
 # launcher mode
-mode "" {
-        bindsym shift+question exec cheatsheet 
-
+set $mode_launcher : [c]hrome stable [d]chrome unstable [s]potify [l]vim
+mode "$mode_launcher" {
         bindsym c exec google-chrome-stable
         bindsym d exec google-chrome-unstable 
-        bindsym g exec gvim
-        bindsym t exec thunar
+        bindsym l exec alacritty -e lvim
         bindsym s exec spotify
-        bindsym x exec firefox
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
 
-bindsym $mod+u mode ""
+bindsym $mod+u mode "$mode_launcher"
 
 # murder mode
-mode "" {
-        bindsym shift+question exec cheatsheet 
-
+set $mode_murder : [c]hrome [s]potify [l]vim
+mode "$mode_murder" {
         bindsym c exec killall chrome && killall chromium
-        bindsym g exec killall gvim
-        bindsym t exec killall thunar
         bindsym s exec killall spotify
-        bindsym x exec killall firefox
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
 
-bindsym $mod+i mode ""
+bindsym $mod+i mode "$mode_murder"
 
-# screenshot mode
-mode "" {
-        bindsym shift+question exec cheatsheet 
-
-        bindsym s exec scrot -s -e 'mv $f ~/Pictures/scrot-`date +%F_%T`.png'
-        bindsym a exec scrot -u -e 'mv $f ~/Pictures/scrot-`date +%F_%T`.png'
-        bindsym f exec scrot -e 'mv $f ~/Pictures/scrot-`date +%F_%T`.png'
-
-	bindsym j focus left
-	bindsym k focus down
-	bindsym l focus up
-	bindsym ccedilla focus right
-
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-
-bindsym $mod+b mode ""
+# screenshot 
+bindsym $mod+b exec "flameshot gui"
 
 # Widow Colours
 #                       border  background text    indicator
@@ -267,7 +244,7 @@ hide_edge_borders both
 bar {
 	status_command bumblebee-status \
 		-m spotify amixer docker_ps github publicip cpu memory disk arch_update battery indicator datetime pomodoro \
-		-p disk.showSize="no" memory.format="{used} ({percent:04.02f}%)" indicator.include="capslock" datetime.format="%d/%m %H:%M" github.token="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" github.reasons="author,assign,comment,mention,review_request"\
+		-p disk.showSize="no" memory.format="{used} ({percent:04.02f}%)" indicator.include="capslock" datetime.format="%d/%m %H:%M" github.token=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 github.reasons="author,assign,comment,mention,review_request"\
 		-t iceberg-dark-powerline
         # strip_workspace_numbers yes
 	# height 25
@@ -286,7 +263,7 @@ bar {
 }
 
 # screen lock
-bindsym $mod+shift+o exec "playerctl pause; i3lock-fancy-rapid 5 3"
+bindsym $mod+shift+o exec "playerctl pause; swaylock -e -F -l --indicator-radius 100 --indicator-thickness 10 --screenshots --fade-in 0.2 --grace 5 --grace-no-mouse --grace-no-touch --effect-vignette 0.2:0.5 --effect-pixelate 5 --effect-blur 7x5"
 
 # volume binds
 bindsym $mod+comma exec amixer set Master 1%-
@@ -338,6 +315,9 @@ bindsym $mod+semicolon exec playerctl previous
 # twmnd (notifications server)
 exec twmnd
 
+# Flameshot (screenshots)
+exec flameshot
+
 # synergy server
 #exec synergys
 
@@ -351,7 +331,14 @@ input "1118:1861:Microsoft_Microsoft___2.4GHz_Transceiver_v6.0" {
 
 input "2821:1281:FTE1200:00_0B05:0501_Touchpad" {
 	tap enabled
+  click_method clickfinger
 }
 
 output eDP-1 pos 0 0 
 output HDMI-A-1 pos 1920 0
+output eDP-1 bg /home/gianpaulo/Pictures/wallpaper/space.jpg fill
+output HDMI-A-1 bg /home/gianpaulo/Pictures/wallpaper/space.jpg fill
+
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+exec hash dbus-update-activation-environment 2>/dev/null && \
+     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
