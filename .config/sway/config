@@ -262,8 +262,22 @@ bar {
 	}
 }
 
+# Lock Screen and DPMS
+set $lock swaylock -e -F -l --indicator-radius 100 --indicator-thickness 10 --screenshots --fade-in 0.2 --grace 5 --grace-no-mouse --grace-no-touch --effect-vignette 0.2:0.5 --effect-pixelate 5 --effect-blur 7x5
+set $bl_time 600
+set $lk_time 615
+set $lb_time 15
+
+exec_always pgrep swayidle || swayidle -w \
+    timeout $lk_time "$lock" \
+    timeout $bl_time "swaymsg 'output * dpms off'" \
+     resume "swaymsg 'output * dpms on'" \
+    timeout $lb_time "pgrep swaylock && swaymsg 'output * dpms off'" \
+     resume "pgrep swaylock && swaymsg 'output * dpms on'" \
+    before-sleep "$lock"
+
 # screen lock
-bindsym $mod+shift+o exec "playerctl pause; swaylock -e -F -l --indicator-radius 100 --indicator-thickness 10 --screenshots --fade-in 0.2 --grace 5 --grace-no-mouse --grace-no-touch --effect-vignette 0.2:0.5 --effect-pixelate 5 --effect-blur 7x5"
+bindsym $mod+shift+o exec "playerctl pause; $lock"
 
 # volume binds
 bindsym $mod+comma exec amixer set Master 1%-
