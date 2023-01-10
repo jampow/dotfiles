@@ -14,7 +14,7 @@ df checkout master
 after configure a new ssh key or if you already have it
 
 ```
-git remote set-url git@github.com:jampow/dotfiles.git
+df remote set-url origin git@github.com:jampow/dotfiles.git
 ```
 
 ## Some dependencies
