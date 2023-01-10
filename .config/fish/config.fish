@@ -8,3 +8,4 @@ export TERM=screen-256color
 export BAT_THEME=Nord
 
 source /opt/asdf-vm/asdf.fish
+fish_add_path $HOME/.local/bin
