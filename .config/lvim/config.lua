@@ -10,7 +10,7 @@ an executable
 
 -- general
 lvim.log.level = "warn"
-lvim.format_on_save = false
+lvim.format_on_save.enabled = true
 lvim.colorscheme = "lunar"
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
@@ -162,31 +162,8 @@ lvim.builtin.treesitter.highlight.enable = true
 --   },
 -- }
 
--- ESLINT
--- local linters = require "lvim.lsp.null-ls.linters"
--- linters.setup {
---   {
---     command = "eslint_d",
---     filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
---     extra_args = { "--fix" },
---   },
--- }
-
--- PRETTIER
--- local formatters = require "lvim.lsp.null-ls.formatters"
--- formatters.setup {
---   {
---     command = "prettier",
---     filetypes = { "typescript", "typescriptreact" },
---   },
--- }
-
--- TAILWIND
-require("lvim.lsp.manager").setup "tailwindcss"
-
 -- Additional Plugins
 lvim.plugins = {
-  { "casonadams/nord.vim" },
   { "peitalin/vim-jsx-typescript" },
   { "tpope/vim-fugitive" },
   { "mattn/emmet-vim" },
