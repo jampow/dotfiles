@@ -57,6 +57,8 @@ bindsym $mod+Return exec alacritty -e tmux -2 a
 # kill focused window
 bindsym $mod+Shift+q kill
 
+bindsym $mod+Shift+e exec swaynag -t warning -m 'Are you sure?' -B 'Yes' 'swaymsg exit'
+
 # start dmenu (a program launcher)
 #bindsym $mod+d exec bemenu_run
 bindsym $mod+d exec rofi -show run
