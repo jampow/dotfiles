@@ -279,7 +279,48 @@ bar {
 }
 
 # Lock Screen and DPMS
-set $lock swaylock -e -F -l --indicator-radius 100 --indicator-thickness 10 --screenshots --fade-in 0.2 --grace 5 --grace-no-mouse --grace-no-touch --effect-vignette 0.2:0.5 --effect-pixelate 5 --effect-blur 7x5
+set $lock swaylock \
+            --clock \
+            --ignore-empty-password \
+            --show-failed-attempts \
+            --indicator-caps-lock \
+            --indicator-radius 100 \
+            --indicator-thickness 10 \
+            --screenshots \
+            --fade-in 0.2 \
+            --grace-no-mouse \
+            --grace-no-touch \
+            --effect-vignette 0.2:0.5 \
+            --effect-pixelate 5 \
+            --effect-blur 7x5 \
+            --bs-hl-color '$base09' \
+            --caps-lock-bs-hl-color '$base09' \
+            --caps-lock-key-hl-color '$base0B' \
+            --key-hl-color '$base0B' \
+            --line-uses-inside '$base01' \
+            --line-uses-ring '$base01' \
+            --inside-color '1f222d'55 \
+            --inside-clear-color '$base09'55 \
+            --inside-caps-lock-color '$base03'55 \
+            --inside-ver-color '$base01'55 \
+            --inside-wrong-color '$base09'55 \
+            --line-color '$base01' \
+            --line-clear-color '$base09' \
+            --line-caps-lock-color '$base03' \
+            --line-ver-color '$base01' \
+            --line-wrong-color '$base09' \
+            --ring-color '$base01' \
+            --ring-clear-color '$base09' \
+            --ring-caps-lock-color '$base03' \
+            --ring-ver-color '$base01' \
+            --ring-wrong-color '$base09' \
+            --separator-color '$base01' \
+            --text-color '$base07' \
+            --text-clear-color '$base07' \
+            --text-caps-lock-color '$base07' \
+            --text-ver-color '$base07' \
+            --text-wrong-color '$base07' \
+            --grace 5 
 set $bl_time 600
 set $lk_time 615
 set $lb_time 15
