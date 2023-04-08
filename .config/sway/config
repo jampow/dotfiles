@@ -230,7 +230,21 @@ mode "$mode_murder" {
 bindsym $mod+i mode "$mode_murder"
 
 # screenshot 
-bindsym $mod+b exec "flameshot gui"
+set $mode_screenshot : [a]rea [w]indow [m]onitor (shift > clipboard)
+mode "$mode_screenshot" {
+        bindsym a exec grim -g "$(slurp)" ~/Pictures/screenshots/$(date "+%Y.%m.%d-%H.%M.%S")_grim.png
+        bindsym w exec grim -g (swaymsg -t get_tree | jq -j '.. | select(.type?) | select(.focused).rect | "\(.x),\(.y) \(.width)x\(.height)\"') ~/Pictures/screenshots/$(date "+%Y.%m.%d-%H.%M.%S")_grim.png
+        #bindsym m exec "grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') ~/Pictures/screenshots/$(date +'$s_grim.png')"
+
+        bindsym shift+a exec grim -g "$(slurp)" | wl-copy
+        bindsym shift+w exec grim -g $(swaymsg -t get_tree | jq -j '.. | select(.type?) | select(.focused).rect | "\(.x),\(.y) \(.width)x\(.height)"') | wl-copy
+        #bindsym M exec "grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') | wl-copy"
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+bindsym $mod+b mode "$mode_screenshot"
 
 # Widow Colours
 #                       border  background text    indicator
@@ -309,11 +323,6 @@ assign [app_id="Franz"] $workspace5
 # Teams notification sucks
 for_window [class="Microsoft Teams - Insiders"] floating enable
 
-# Screenshots
-bindsym --release Print exec "scrot $HOME/Pictures/screenshots/full-%Y-%m-%d---%H.%M.%S.png"
-bindsym --release Shift+Print exec "scrot -d 1 -s $HOME/Pictures/screenshots/selection-%Y-%m-%d---%h.%M.%s.png"
-bindsym --release Control+Shift+Print exec "scrot -u $HOME/Pictures/screenshots/window-%Y-%m-%d---%h.%M.%s.png"
-
 # Transparencies
 # exec_always compton -f
 
@@ -331,9 +340,6 @@ bindsym $mod+semicolon exec playerctl previous
 
 # twmnd (notifications server)
 exec twmnd
-
-# Flameshot (screenshots)
-exec flameshot
 
 # synergy server
 #exec synergys
