@@ -10,5 +10,7 @@ export GPG_TTY=(tty)
 
 set fish_greeting
 
+set -gx GPG_TTY (tty)
+
 source /opt/asdf-vm/asdf.fish
 fish_add_path $HOME/.local/bin
