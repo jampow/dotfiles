@@ -14,3 +14,8 @@ set -gx GPG_TTY (tty)
 
 source /opt/asdf-vm/asdf.fish
 fish_add_path $HOME/.local/bin
+
+# pnpm
+set -gx PNPM_HOME "/home/gianpaulo/.local/share/pnpm"
+set -gx PATH "$PNPM_HOME" $PATH
+# pnpm end
