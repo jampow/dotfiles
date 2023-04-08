@@ -393,13 +393,18 @@ input "1118:1861:Microsoft_Microsoft___2.4GHz_Transceiver_v6.0" {
 	xkb_layout br
 }
 
-input "2821:1281:FTE1200:00_0B05:0501_Touchpad" {
+input "1267:12614:DELL0A7B:00_04F3:3146_Touchpad" {
 	tap enabled
   click_method clickfinger
 }
 
-output eDP-1 pos 0 0 
-output HDMI-A-1 pos 1920 0
+input "1267:12614:DELL0A7B:00_04F3:3146_Mouse" {
+	tap enabled
+  click_method clickfinger
+}
+
+# output eDP-1 pos 0 0 
+# output HDMI-A-1 pos 1920 0
 output eDP-1 bg /home/gianpaulo/Pictures/wallpaper/space.jpg fill
 output HDMI-A-1 bg /home/gianpaulo/Pictures/wallpaper/space.jpg fill
 
