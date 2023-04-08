@@ -206,7 +206,7 @@ set $mode_launcher : [c]hrome stable [d]chrome unstable [s]potify [l]vim
 mode "$mode_launcher" {
         bindsym c exec google-chrome-stable
         bindsym d exec google-chrome-unstable 
-        bindsym l exec alacritty -e lvim
+        bindsym l exec alacritty --class lunarvim -e lvim
         bindsym s exec spotify
 
         # back to normal: Enter or Escape
@@ -291,15 +291,16 @@ exec_always feh --bg-max --randomize $HOME/Pictures/wallpapers/*
 
 # workspace 2
 assign [app_id="code"] $workspace2
+assign [app_id="lunarvim"] $workspace2
 
 # workspace 3
-assign [app_id="Chromium"] $workspace3
-assign [app_id="Google-chrome-unstable"] $workspace3
-assign [app_id="Google-chrome"] $workspace3
-assign [app_id="Firefox"] $workspace3
+assign [class="Chromium"] $workspace3
+assign [class="Google-chrome-unstable"] $workspace3
+assign [class="Google-chrome"] $workspace3
+assign [class="firefox"] $workspace3
 
 # workspace 4
-assign [app_id="Spotify"] $workspace4
+for_window [class="Spotify"] move window to workspace $workspace4
 
 # workspace 5
 assign [app_id="Thunderbird"] $workspace5
