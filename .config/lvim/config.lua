@@ -11,7 +11,7 @@ an executable
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = false
-lvim.colorscheme = "nord"
+lvim.colorscheme = "lunar"
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 
@@ -19,8 +19,8 @@ lvim.colorscheme = "nord"
 lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
--- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
--- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
+lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
+lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 -- unmap a default keymapping
 -- vim.keymap.del("n", "<C-Up>")
 -- override a default keymapping
@@ -190,9 +190,18 @@ lvim.plugins = {
   { "peitalin/vim-jsx-typescript" },
   { "tpope/vim-fugitive" },
   { "mattn/emmet-vim" },
-  { "ap/vim-css-color" },
   { "prettier/vim-prettier" },
   { "wakatime/vim-wakatime" },
+  { "limadm/vim-blues" },
+  { "github/copilot.vim" },
+  {
+    "rrethy/vim-hexokinase",
+    build = "make hexokinase",
+    -- config = function ()
+      -- vim.g.Hexokinase_highlighters = { "foreground" }
+      -- vim.cmd ("let g:Hexokinase_highlighters = ['foreground']")
+    -- end
+  }
   --     {
   --       "folke/trouble.nvim",
   --       cmd = "TroubleToggle",
@@ -213,4 +222,14 @@ lvim.plugins = {
 --   end,
 -- })
 --
+
+-- Github Copilot maps
+vim.g.copilot_no_tab_map = true
+vim.g.copilot_assume_mapped = true
+vim.api.nvim_set_keymap("i", "<A-t>", 'copilot#Accept("")', { expr = true, silent = true })
+
+-- hexokinase
+vim.g.Hexokinase_highlighters = { "backgroundfull" }
+vim.g.Hexokinase_optInPatterns = 'full_hex,triple_hex,rgb,rgba,hsl,hsla,colour_names'
+
 vim.opt.relativenumber = true

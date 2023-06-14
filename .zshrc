@@ -11,7 +11,8 @@ export ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="dogenpunk"
-ZSH_THEME="bira"
+#ZSH_THEME="bira"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Load alias file
 if [ -f ~/.bash_alias ]; then
@@ -62,7 +63,7 @@ export NVM_AUTOLOAD=1
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z tmux node archlinux colored-man-pages frontend-search jira lein docker docker-compose compleat nvm)
+plugins=(git z tmux node archlinux colored-man-pages frontend-search jira lein docker docker-compose compleat)
 
 # User configuration
 
@@ -105,17 +106,13 @@ NPM_PACKAGES="${HOME}/.npm-packages"
 
 PATH="$NPM_PACKAGES/bin:$PATH"
 
+PATH="$PATH:$HOME/.local/bin"
 
 export TERM="xterm-256color"
 
-unset MANPATH
-export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
-
-source /usr/share/nvm/init-nvm.sh
-
-alias dfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-
-source ~/powerlevel10k/powerlevel10k.zsh-theme
+alias df='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+. /opt/asdf-vm/asdf.sh
