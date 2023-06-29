@@ -241,7 +241,7 @@ hide_edge_borders both
 bar {
 	status_command bumblebee-status \
 		-m spotify amixer docker_ps publicip cpu memory disk network_traffic arch-update battery xrandr indicator datetime \
-		-p disk.showSize="no" memory.format="{used} ({percent:04.02f}%)" indicator.include="capslock" datetime.format="%d/%m %H:%M" \
+		-p disk.format="{path} {percent:05.02f}%" memory.format="{used} ({percent:04.02f}%)" indicator.include="capslock" datetime.format="%d/%m %H:%M" \
 		-t iceberg-dark-powerline
         # strip_workspace_numbers yes
 	# height 25
