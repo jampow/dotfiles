@@ -116,3 +116,5 @@ alias df='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 . /opt/asdf-vm/asdf.sh
+
+source /home/gianpaulo/.config/broot/launcher/bash/br
