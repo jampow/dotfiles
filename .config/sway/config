@@ -96,6 +96,7 @@ bindsym $mod+Shift+Right move right
 
 # move workspace through monitors
 bindsym $mod+Control+j move workspace to output left
+bindsym $mod+Control+l move workspace to output up
 
 # split in horizontal orientation
 bindsym $mod+h split h
@@ -385,6 +386,7 @@ exec twmnd
 # synergy server
 #exec synergys
 
+# swaymsg get_inputs
 input "1:1:AT_Translated_Set_2_keyboard" {
 	xkb_layout br
 }
@@ -403,10 +405,12 @@ input "1267:12614:DELL0A7B:00_04F3:3146_Mouse" {
   click_method clickfinger
 }
 
-# output eDP-1 pos 0 0 
-# output HDMI-A-1 pos 1920 0
-output eDP-1 bg /home/gianpaulo/Pictures/wallpaper/space.jpg fill
-output HDMI-A-1 bg /home/gianpaulo/Pictures/wallpaper/space.jpg fill
+# swaymsg get_outputs
+# output HDMI-A-1 pos 0 0
+# output eDP-1 pos 0 1080 
+
+output eDP-1 bg /home/gianpaulo/Pictures/wallpaper/bluefire.jpg fill
+output HDMI-A-1 bg /home/gianpaulo/Pictures/wallpaper/bluefire.jpg fill
 
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
 exec hash dbus-update-activation-environment 2>/dev/null && \
