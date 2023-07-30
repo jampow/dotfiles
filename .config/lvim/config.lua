@@ -10,7 +10,7 @@ an executable
 
 -- general
 lvim.log.level = "warn"
-lvim.format_on_save.enabled = true
+-- lvim.format_on_save.enabled = true
 lvim.colorscheme = "lunar"
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
@@ -171,6 +171,7 @@ lvim.plugins = {
   { "wakatime/vim-wakatime" },
   { "limadm/vim-blues" },
   { "github/copilot.vim" },
+  { "dart-lang/dart-vim-plugin" },
   {
     "rrethy/vim-hexokinase",
     build = "make hexokinase",
@@ -208,5 +209,12 @@ vim.api.nvim_set_keymap("i", "<A-t>", 'copilot#Accept("")', { expr = true, silen
 -- hexokinase
 vim.g.Hexokinase_highlighters = { "backgroundfull" }
 vim.g.Hexokinase_optInPatterns = 'full_hex,triple_hex,rgb,rgba,hsl,hsla,colour_names'
+
+-- Github Copilot
+vim.g.copilot_no_tab_map = true
+vim.g.copilot_assume_mapped = true
+vim.api.nvim_set_keymap("i","<A-t>", 'copilot#Accept("")', { expr = true, silent = true })
+
+-- require('lspconfig').dartls.setup{}
 
 vim.opt.relativenumber = true
