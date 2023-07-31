@@ -10,10 +10,14 @@ binutils
 bison
 btop
 cmatrix
+cronie
+ctop
 dbeaver
 debugedit
 docker
 docker-compose
+duf
+dust
 exa
 fakeroot-tcp
 fd
@@ -67,5 +71,6 @@ which
 xclip
 zaproxy
 zellij
+zenity
 zoxide
 zsh
