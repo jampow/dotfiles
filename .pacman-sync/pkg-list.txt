@@ -94,6 +94,7 @@ newsboat
 nmap
 npkill
 ntfs-3g
+obs-studio
 openbsd-netcat
 opencv
 openssh
@@ -119,6 +120,7 @@ pulseaudio-bluetooth
 pulsemixer
 python-docker
 python-pip
+python-xyzservices
 ranger
 rofi
 sane-airscan
