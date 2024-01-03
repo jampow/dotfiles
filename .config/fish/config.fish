@@ -20,4 +20,5 @@ fish_add_path $HOME/.local/bin
 # pnpm
 set -gx PNPM_HOME "/home/gianpaulo/.local/share/pnpm"
 set -gx PATH "$PNPM_HOME" $PATH
+set -gx EDITOR "nvim"
 # pnpm end

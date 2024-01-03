@@ -260,7 +260,7 @@ hide_edge_borders both
 # finds out, if available)
 bar {
 	status_command bumblebee-status \
-		-m spotify amixer docker_ps github publicip cpu memory disk arch_update battery datetime pomodoro \
+		-m spotify amixer  docker_ps github publicip cpu memory disk arch_update battery datetime pomodoro \
 		-p disk.format="{path} {percent:05.02f}%" disk.path="/home" memory.format="{used} ({percent:04.02f}%)" datetime.format="%d/%m %H:%M" github.token=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 github.reasons="author,assign,comment,mention,review_request"\
 		-t iceberg-dark-powerline
         # strip_workspace_numbers yes
@@ -287,7 +287,7 @@ set $lock swaylock \
             --indicator-caps-lock \
             --indicator-radius 100 \
             --indicator-thickness 10 \
-            --screenshots \
+            --screenshot \
             --fade-in 0.2 \
             --grace-no-mouse \
             --grace-no-touch \
@@ -298,8 +298,8 @@ set $lock swaylock \
             --caps-lock-bs-hl-color '$base09' \
             --caps-lock-key-hl-color '$base0B' \
             --key-hl-color '$base0B' \
-            --line-uses-inside '$base01' \
-            --line-uses-ring '$base01' \
+            --line-uses-inside $base01 \
+            --line-uses-ring $base01 \
             --inside-color '1f222d'55 \
             --inside-clear-color '$base09'55 \
             --inside-caps-lock-color '$base03'55 \
@@ -321,7 +321,7 @@ set $lock swaylock \
             --text-caps-lock-color '$base07' \
             --text-ver-color '$base07' \
             --text-wrong-color '$base07' \
-            --grace 5 
+            --grace 5
 set $bl_time 600
 set $lk_time 615
 set $lb_time 15
