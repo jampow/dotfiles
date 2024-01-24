@@ -260,7 +260,7 @@ hide_edge_borders both
 # finds out, if available)
 bar {
 	status_command bumblebee-status \
-		-m spotify amixer  docker_ps github publicip cpu memory disk arch_update battery datetime pomodoro \
+		-m spotify pulseout pulsein docker_ps github publicip cpu memory disk arch_update battery datetime pomodoro \
 		-p disk.format="{path} {percent:05.02f}%" disk.path="/home" memory.format="{used} ({percent:04.02f}%)" datetime.format="%d/%m %H:%M" github.token=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 github.reasons="author,assign,comment,mention,review_request"\
 		-t iceberg-dark-powerline
         # strip_workspace_numbers yes
@@ -338,8 +338,8 @@ exec_always pgrep swayidle || swayidle -w \
 bindsym $mod+shift+o exec "playerctl pause; $lock"
 
 # volume binds
-bindsym $mod+comma exec amixer set Master 1%-
-bindsym $mod+period exec amixer set Master 1%+
+bindsym $mod+comma exec pulsemixer --change-volume -5
+bindsym $mod+period exec pulsemixer --change-volume +5
 bindsym $mod+m exec pulsemixer --toggle-mute
 
 # Wallpaper
