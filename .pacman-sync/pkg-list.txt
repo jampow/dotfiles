@@ -80,6 +80,7 @@ icaclient
 insomnia
 inxi
 jq
+kicad
 lazydocker-bin
 lazygit
 lf
@@ -160,6 +161,7 @@ teams
 texinfo
 the_silver_searcher
 thunar
+thunderbird
 tig
 tldr
 tmux
