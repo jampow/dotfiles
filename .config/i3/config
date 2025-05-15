@@ -27,7 +27,7 @@ set $base0F #fcc09e
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
+set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -89,6 +89,7 @@ bindsym $mod+Shift+Right move right
 
 # move workspace through monitors
 bindsym $mod+Control+j move workspace to output left
+bindsym $mod+Control+l move workspace to output up
 
 # split in horizontal orientation
 bindsym $mod+h split h
@@ -120,8 +121,8 @@ set $workspace1 "1: "
 set $workspace2 "2: "
 set $workspace3 "3: "
 set $workspace4 "4: "
-set $workspace5 "5: "
-set $workspace6 "6: "
+set $workspace5 "5: "
+set $workspace6 "6: "
 set $workspace7 "7"
 set $workspace8 "8"
 set $workspace9 "9"
@@ -225,7 +226,7 @@ set $mode_murder : [c]hrome [s]potify [l]vim
 bindsym $mod+i mode "$mode_murder"
 
 # screenshot 
-bindsym $mod+b exec "flameshot gui"
+bindsym Print exec "flameshot gui"
 
 # Widow Colours
 #                       border  background text    indicator
@@ -239,10 +240,11 @@ hide_edge_borders both
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
+  font pango:Inconsolata 10
 	status_command bumblebee-status \
-		-m spotify amixer docker_ps publicip cpu memory disk network_traffic arch-update battery xrandr indicator datetime \
+		-m spotify pipewire docker_ps cpu memory disk apt battery indicator datetime \
 		-p disk.format="{path} {percent:05.02f}%" memory.format="{used} ({percent:04.02f}%)" indicator.include="capslock" datetime.format="%d/%m %H:%M" \
-		-t iceberg-dark-powerline
+		-t nord-powerline
         # strip_workspace_numbers yes
 	# height 25
 	bindsym button4 nop
@@ -260,7 +262,7 @@ bar {
 }
 
 # screen lock
-bindsym $mod+shift+o exec "playerctl pause; i3lock-fancy-rapid 5 3"
+bindsym $mod+shift+o exec "playerctl pause; betterlockscreen -l"
 
 # volume binds
 bindsym $mod+comma exec amixer set Master 1%-
@@ -268,12 +270,14 @@ bindsym $mod+period exec amixer set Master 1%+
 # bindsym $mod+m exec pactl set-sink-mute 0 toggle
 bindsym $mod+m exec amixer sset Master toggle
 
+# Monitors
+exec xrandr --output eDP-1 --auto --below DP-3
 
 # Wallpaper
-exec_always feh --bg-max --randomize $HOME/Pictures/wallpapers/*
+exec_always feh --bg-max $HOME/Pictures/wallpaper/bluefire.jpg
 
 # workspace 2
-assign [class="Gvim"] $workspace2
+assign [class="lunarvim"] $workspace2
 assign [class="code"] $workspace2
 
 # workspace 3
@@ -281,24 +285,23 @@ assign [class="Chromium"] $workspace3
 assign [class="Google-chrome-unstable"] $workspace3
 assign [class="Google-chrome"] $workspace3
 assign [class="Firefox"] $workspace3
+assign [class="Microsoft-edge"] $workspace3
 
 # workspace 4
 assign [class="Spotify"] $workspace4
 
 # workspace 5
-assign [class="Thunderbird"] $workspace5
-assign [class="Franz"] $workspace5
+for_window [title="^Microsoft Teams.*"]  move to workspace $workspace5
 
-# Teams notification sucks
-for_window [class="Microsoft Teams - Insiders"] floating enable
-
+# workspace 6
+for_window [title="^Outlook \(PWA\).*"]  move to workspace $workspace6
 # Screenshots
 bindsym --release Print exec "scrot $HOME/Pictures/screenshots/full-%Y-%m-%d---%H.%M.%S.png"
 bindsym --release Shift+Print exec "scrot -d 1 -s $HOME/Pictures/screenshots/selection-%Y-%m-%d---%h.%M.%s.png"
 bindsym --release Control+Shift+Print exec "scrot -u $HOME/Pictures/screenshots/window-%Y-%m-%d---%h.%M.%s.png"
 
 # Transparencies
-# exec_always compton -f
+exec_always compton -f
 
 # Inicializações automáticas
 
