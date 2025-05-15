@@ -36,9 +36,6 @@ if not contains $_asdf_shims $PATH
 end
 set --erase _asdf_shims
 
-# pnpm
-set -gx PNPM_HOME "/home/gianpaulo/.local/share/pnpm"
-set -gx PATH "$PNPM_HOME" $PATH
 set -gx EDITOR "nvim"
 set -gx SUDO_EDITOR "lvim"
 
@@ -48,3 +45,8 @@ if not string match -q -- $PNPM_HOME $PATH
   set -gx PATH "$PNPM_HOME" $PATH
 end
 # pnpm end
+
+function multicd
+    echo cd (string repeat -n (math (string length -- $argv[1]) - 1) ../)
+end
+abbr --add dotdot --regex '^\.\.+$' --function multicd
