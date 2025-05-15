@@ -8,6 +8,9 @@ set -g fish_key_bindings fish_vi_key_bindings
 set fish_greeting
 
 alias df='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias ls='exa --icons'
+alias la='ls -a'
+alias cat='bat'
 
 export TERM=screen-256color
 export BAT_THEME=Nord
