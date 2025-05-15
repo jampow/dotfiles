@@ -21,6 +21,7 @@ set fish_greeting
 set -gx GPG_TTY (tty)
 
 fish_add_path $HOME/.local/bin
+fish_add_path $HOME/.config/rofi/scripts
 
 # ASDF configuration code
 if test -z $ASDF_DATA_DIR
