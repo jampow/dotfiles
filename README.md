@@ -17,48 +17,52 @@ after configure a new ssh key or if you already have it
 df remote set-url origin git@github.com:jampow/dotfiles.git
 ```
 
-## Some dependencies
+## Manual installations
 
-to update thi list `yay -Qe`
+- [font awesome](https://fontawesome.com/) - aditional font to be installed
+- [get nerd font](https://github.com/getnf/getnf) - Tool to download nerd fonts
+
+  - Firacode
+  - Inconsola
+  - Meslo
+
+- [asdf-vm](https://github.com/asdf-vm/asdf) - Version manager
+
+Download latest package at release page
+
+- [Fisher](https://github.com/jorgebucaran/fisher) - Plugin manager for fish
+
+After fisher installation, execute the command below
+
 ```
-alacritty
-awesome-terminal-fonts
-bat
-bumblebee-status
-code
-cpanminus
-dbus-python
-discord
-docker
-docker-compose
-firefox
-fish
-gcc
-git
-git-delta
-google-chrome
-google-chrome-beta
-google-chrome-dev
-jq
-neofetch
-neovim
-nvm
-playerctl
-python-dbus-next
-python-pip
-python2-pip
-rofi
-ruby
-spotify
-spotifyd
-tig
-tmux
-tree
-vim
-which
-xclip
-yay
-zsh
+df co ~/.config/fish/fish_plugins
+fisher udpate
 ```
-teste
-teste
+
+- [tpm](https://github.com/tmux-plugins/tpm) - TMUX plugih manager
+
+After tpm installation, type `prefix` + `I`
+
+- [lunar vim](https://www.lunarvim.org/) - editor de texto
+
+Install lvim dependencies with `asdf`
+
+```
+asdf plugin add nodejs
+asdf plugin add python
+asdf plugin add rust
+asdf plugin add golang
+
+asdf install nodejs latest
+asdf install python latest
+asdf install rust latest
+asdf install golang latest
+
+asdf set -u nodejs latest
+asdf set -u python latest
+asdf set -u rust latest
+asdf set -u golang latest
+```
+
+If hexokinase error shows up at start up, run command `:Lazy build vim-hexokinase`
+
