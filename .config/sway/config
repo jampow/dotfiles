@@ -259,10 +259,10 @@ hide_edge_borders both
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-	status_command bumblebee-status \
+	status_command /home/gianpaulo/.local/bin/bumblebee-status-repo/bumblebee-status \
 		-m spotify pulseout pulsein docker_ps github publicip cpu memory disk arch_update battery datetime pomodoro \
 		-p disk.format="{path} {percent:05.02f}%" disk.path="/home" memory.format="{used} ({percent:04.02f}%)" datetime.format="%d/%m %H:%M" github.token=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 github.reasons="author,assign,comment,mention,review_request"\
-		-t iceberg-dark-powerline
+		-t nord-powerline
         # strip_workspace_numbers yes
 	# height 25
 	bindsym button4 nop
@@ -391,7 +391,8 @@ input "1:1:AT_Translated_Set_2_keyboard" {
 	xkb_layout br
 }
 
-input "1118:1861:Microsoft_Microsoft___2.4GHz_Transceiver_v6.0" {
+
+input "7504:24926:ZMK_Project_Sofle_Keyboard" {
 	xkb_layout br
 }
 
@@ -406,11 +407,11 @@ input "1267:12614:DELL0A7B:00_04F3:3146_Mouse" {
 }
 
 # swaymsg get_outputs
-# output HDMI-A-1 pos 0 0
-# output eDP-1 pos 0 1080 
+output DP-3 pos 0 0
+output eDP-1 pos 0 1080
 
 output eDP-1 bg /home/gianpaulo/Pictures/wallpaper/bluefire.jpg fill
-output HDMI-A-1 bg /home/gianpaulo/Pictures/wallpaper/bluefire.jpg fill
+output DP-3 bg /home/gianpaulo/Pictures/wallpaper/bluefire.jpg fill
 
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
 exec hash dbus-update-activation-environment 2>/dev/null && \
