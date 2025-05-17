@@ -10,7 +10,7 @@ an executable
 
 -- general
 lvim.log.level = "warn"
--- lvim.format_on_save.enabled = true
+lvim.format_on_save.enabled = true
 lvim.colorscheme = "lunar"
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
@@ -132,8 +132,12 @@ lvim.builtin.treesitter.highlight.enable = true
 -- end
 
 -- -- set a formatter, this will override the language server formatting capabilities (if it exists)
--- local formatters = require "lvim.lsp.null-ls.formatters"
--- formatters.setup {
+local formatters = require "lvim.lsp.null-ls.formatters"
+formatters.setup {
+  {
+    name = 'biome',
+    command = { 'biome', 'lsp-proxy' },
+  },
 --   { command = "black", filetypes = { "python" } },
 --   { command = "isort", filetypes = { "python" } },
 --   {
@@ -145,11 +149,12 @@ lvim.builtin.treesitter.highlight.enable = true
 --     ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
 --     filetypes = { "typescript", "typescriptreact" },
 --   },
--- }
+}
 
 -- -- set additional linters
 -- local linters = require "lvim.lsp.null-ls.linters"
 -- linters.setup {
+--   { name = 'biome' },
 --   { command = "flake8", filetypes = { "python" } },
 --   {
 --     -- each linter accepts a list of options identical to https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#Configuration
