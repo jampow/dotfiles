@@ -2,4 +2,4 @@
 
 xset r rate 250 150
 setxkbmap br
-exec i3
+exec sway
