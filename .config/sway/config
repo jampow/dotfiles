@@ -58,11 +58,13 @@ bindsym $mod+Return exec alacritty -e tmux -2 a
 # kill focused window
 bindsym $mod+Shift+q kill
 
-bindsym $mod+Shift+e exec swaynag -t warning -m 'Are you sure?' -B 'Yes' 'swaymsg exit && exit'
+# bindsym $mod+Shift+e exec swaynag -t warning -m 'Are you sure?' -B 'Yes' 'swaymsg exit && exit'
+bindsym $mod+Shift+e exec $HOME/.config/rofi/scripts/powermenu_t2
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec bemenu_run
-bindsym $mod+d exec rofi -show run
+# bindsym $mod+d exec rofi -show run
+bindsym $mod+d exec $HOME/.config/rofi/scripts/launcher_t3
 # -lines 3 -width 20 -padding 10 -opacity "85" -font "System San Francisco Display 13" -config $HOME/.config/rofi/config -hide-scrollbar
 
 

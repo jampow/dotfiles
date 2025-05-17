@@ -166,7 +166,7 @@ python-flit-scm
 python-pip
 qpwgraph
 ranger
-rofi
+rofi-wayland
 sane-airscan
 simple-scan
 sl
