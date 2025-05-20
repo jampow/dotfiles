@@ -202,15 +202,20 @@ bindsym $mod+r mode ""
 mode "$mode_launcher" {
         bindsym c exec google-chrome-stable
         bindsym d exec google-chrome-unstable 
-        bindsym l exec alacritty -e lvim
         bindsym s exec spotify
+        bindsym l exec alacritty --class lunarvim -e lvim
+        bindsym e exec /opt/microsoft/msedge/microsoft-edge --profile-directory=Default --app-id=faolnafnngnfdaknnbpnkhgohbobgegn --app-url=https://outlook.office.com/mail/ %U && \
+                       /opt/google/chrome/google-chrome "--profile-directory=Profile 2" --app-id=faolnafnngnfdaknnbpnkhgohbobgegn %U
+        bindsym t exec /opt/microsoft/msedge/microsoft-edge --profile-directory=Default --app-id=cifhbcnohmdccbgoicgdjpfamggdegmo "--app-url=https://teams.microsoft.com/v2/?clientType=pwa" && \
+                       /opt/google/chrome/google-chrome "--profile-directory=Profile 2" --app-id=cifhbcnohmdccbgoicgdjpfamggdegmo
+        bindsym w exec /opt/google/chrome/google-chrome --profile-directory=Default --app-id=hnpfjngllnobngcgfapefoaidbinmjnm
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
 
-set $mode_launcher : [c]hrome stable [d]chrome unstable [s]potify [l]vim
+set $mode_launcher : [c]hrome stable [d]chrome unstable [s]potify [l]vim [e]mail [t]eams [w]hatsapp
 bindsym $mod+u mode "$mode_launcher"
 
 # murder mode

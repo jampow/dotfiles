@@ -131,8 +131,8 @@ set $workspace1 "1: "
 set $workspace2 "2: "
 set $workspace3 "3: "
 set $workspace4 "4: "
-set $workspace5 "5: "
-set $workspace6 "6: "
+set $workspace5 "5: "
+set $workspace6 "6: "
 set $workspace7 "7"
 set $workspace8 "8"
 set $workspace9 "9"
@@ -206,13 +206,17 @@ mode "" {
 bindsym $mod+r mode ""
 
 # launcher mode
-set $mode_launcher : [c]hrome stable [d]chrome unstable [s]potify [l]vim [t]eams
+set $mode_launcher : [c]hrome stable [d]chrome unstable [s]potify [l]vim [t]eams [e]mail [w]hatsapp 
 mode "$mode_launcher" {
         bindsym c exec google-chrome-stable
         bindsym d exec google-chrome-unstable 
-        bindsym l exec alacritty --class lunarvim -e lvim
         bindsym s exec spotify
-        bindsym t exec /opt/google/chrome/google-chrome "--profile-directory=Profile 3" --app-id=cifhbcnohmdccbgoicgdjpfamggdegmo && /opt/google/chrome/google-chrome "--profile-directory=Profile 2" --app-id=cifhbcnohmdccbgoicgdjpfamggdegmo
+        bindsym l exec alacritty --class lunarvim -e lvim
+        bindsym e exec /opt/microsoft/msedge/microsoft-edge --profile-directory=Default --app-id=faolnafnngnfdaknnbpnkhgohbobgegn --app-url=https://outlook.office.com/mail/ %U && \
+                       /opt/google/chrome/google-chrome  --enable-features=UseOzonePlatform,WebRTCPipeWireCapturer --ozone-platform=wayland "--profile-directory=Profile 2" --app-id=faolnafnngnfdaknnbpnkhgohbobgegn %U
+        bindsym t exec /opt/microsoft/msedge/microsoft-edge --profile-directory=Default --app-id=cifhbcnohmdccbgoicgdjpfamggdegmo "--app-url=https://teams.microsoft.com/v2/?clientType=pwa" && \
+                       /opt/google/chrome/google-chrome --enable-features=UseOzonePlatform,WebRTCPipeWireCapturer --ozone-platform=wayland "--profile-directory=Profile 2" --app-id=cifhbcnohmdccbgoicgdjpfamggdegmo
+        bindsym w exec /opt/google/chrome/google-chrome --enable-features=UseOzonePlatform,WebRTCPipeWireCapturer --ozone-platform=wayland --profile-directory=Default --app-id=hnpfjngllnobngcgfapefoaidbinmjnm
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
@@ -234,22 +238,7 @@ mode "$mode_murder" {
 
 bindsym $mod+i mode "$mode_murder"
 
-# screenshot 
-set $mode_screenshot : [a]rea [w]indow [m]onitor (shift > clipboard)
-mode "$mode_screenshot" {
-        bindsym a exec grim -g "$(slurp)" ~/Pictures/screenshots/$(date "+%Y.%m.%d-%H.%M.%S")_grim.png
-        bindsym w exec grim -g (swaymsg -t get_tree | jq -j '.. | select(.type?) | select(.focused).rect | "\(.x),\(.y) \(.width)x\(.height)\"') ~/Pictures/screenshots/$(date "+%Y.%m.%d-%H.%M.%S")_grim.png
-        #bindsym m exec "grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') ~/Pictures/screenshots/$(date +'$s_grim.png')"
-
-        bindsym shift+a exec grim -g "$(slurp)" | wl-copy
-        bindsym shift+w exec grim -g $(swaymsg -t get_tree | jq -j '.. | select(.type?) | select(.focused).rect | "\(.x),\(.y) \(.width)x\(.height)"') | wl-copy
-        #bindsym M exec "grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') | wl-copy"
-
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-bindsym $mod+b mode "$mode_screenshot"
+bindsym Print exec $HOME/.local/bin/screenshot
 
 # Widow Colours
 #                       border  background text    indicator
@@ -263,9 +252,10 @@ hide_edge_borders both
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-	status_command bumblebee-status \
-		-m spotify pipewire docker_ps github publicip cpu memory disk arch_update battery datetime pomodoro \
-		-p disk.format="{path} {percent:05.02f}%" disk.path="/home" memory.format="{used} ({percent:04.02f}%)" datetime.format="%d/%m %H:%M" github.token=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 github.reasons="author,assign,comment,mention,review_request"\
+  font pango:Inconsolata 10
+	status_command $HOME/.local/bin/bumblebee-status \
+		-m spotify pipewire docker_ps cpu memory disk apt battery indicator datetime \
+		-p disk.format="{path} {percent:05.02f}%" memory.format="{used} ({percent:04.02f}%)" indicator.include="capslock" datetime.format="%d/%m %H:%M" \
 		-t nord-powerline
         # strip_workspace_numbers yes
 	# height 25
@@ -354,14 +344,17 @@ assign [app_id="lunarvim"] $workspace2
 assign [class="Chromium"] $workspace3
 assign [class="Google-chrome-unstable"] $workspace3
 assign [class="Google-chrome"] $workspace3
-assign [class="firefox"] $workspace3
+assign [class="Firefox"] $workspace3
+assign [class="Microsoft-edge"] $workspace3
 
 # workspace 4
-for_window [class="Spotify"] move window to workspace $workspace4
+assign [class="Spotify"] $workspace4
 
 # workspace 5
-assign [app_id="Thunderbird"] $workspace5
-assign [app_id="Franz"] $workspace5
+for_window [title="^Microsoft Teams.*"]  move to workspace $workspace5
+
+# workspace 6
+for_window [title="^Outlook \(PWA\).*"]  move to workspace $workspace6
 
 # Teams notification sucks
 for_window [class="Microsoft Teams - Insiders"] floating enable
@@ -425,8 +418,8 @@ input "1267:12614:DELL0A7B:00_04F3:3146_Mouse" {
 
 # output HDMI-A-1 pos 0 0
 # eDP-1 1366x768
-output eDP-1 pos 0 0 
-output DP-1 pos 1366 0
+output DP-3 pos 0 0 
+output eDP-1 pos 0 1080
 
 output eDP-1 bg /home/gianpaulo/Pictures/wallpaper/bluefire.jpg fill
 output DP-1 bg /home/gianpaulo/Pictures/wallpaper/bluefire.jpg fill
