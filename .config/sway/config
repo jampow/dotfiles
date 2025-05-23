@@ -30,6 +30,8 @@ set $base0F #fcc09e
 
 set $mod Mod4
 
+set $wallpaper $HOME/Pictures/wallpaper/bluefire.jpg
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:System San Francisco Display, FontAwesome 8
@@ -274,50 +276,10 @@ bar {
 }
 
 # Lock Screen and DPMS
-set $lock swaylock \
-            --clock \
-            --ignore-empty-password \
-            --show-failed-attempts \
-            --indicator-caps-lock \
-            --indicator-radius 100 \
-            --indicator-thickness 10 \
-            --screenshot \
-            --fade-in 0.2 \
-            --grace-no-mouse \
-            --grace-no-touch \
-            --effect-vignette 0.2:0.5 \
-            --effect-pixelate 5 \
-            --effect-blur 7x5 \
-            --bs-hl-color '$base09' \
-            --caps-lock-bs-hl-color '$base09' \
-            --caps-lock-key-hl-color '$base0B' \
-            --key-hl-color '$base0B' \
-            --line-uses-inside $base01 \
-            --line-uses-ring $base01 \
-            --inside-color '1f222d'55 \
-            --inside-clear-color '$base09'55 \
-            --inside-caps-lock-color '$base03'55 \
-            --inside-ver-color '$base01'55 \
-            --inside-wrong-color '$base09'55 \
-            --line-color '$base01' \
-            --line-clear-color '$base09' \
-            --line-caps-lock-color '$base03' \
-            --line-ver-color '$base01' \
-            --line-wrong-color '$base09' \
-            --ring-color '$base01' \
-            --ring-clear-color '$base09' \
-            --ring-caps-lock-color '$base03' \
-            --ring-ver-color '$base01' \
-            --ring-wrong-color '$base09' \
-            --separator-color '$base01' \
-            --text-color '$base07' \
-            --text-clear-color '$base07' \
-            --text-caps-lock-color '$base07' \
-            --text-ver-color '$base07' \
-            --text-wrong-color '$base07' \
-            --grace 5
-set $bl_time 600
-set $lk_time 615
+set $lock $HOME/.local/bin/lock
+
+set $lk_time 300
+set $bl_time 330
 set $lb_time 15
 
 exec_always pgrep swayidle || swayidle -w \
@@ -332,9 +294,9 @@ exec_always pgrep swayidle || swayidle -w \
 bindsym $mod+shift+o exec "playerctl pause; $lock"
 
 # volume binds
-bindsym $mod+comma exec pulsemixer --change-volume -5
-bindsym $mod+period exec pulsemixer --change-volume +5
-bindsym $mod+m exec pulsemixer --toggle-mute
+bindsym $mod+comma exec pamixer -d 5
+bindsym $mod+period exec pamixer -i 5
+bindsym $mod+m exec pamixer -t
 
 # workspace 2
 assign [app_id="code"] $workspace2
@@ -421,9 +383,9 @@ input "1267:12614:DELL0A7B:00_04F3:3146_Mouse" {
 output DP-3 pos 0 0 
 output eDP-1 pos 0 1080
 
-output eDP-1 bg /home/gianpaulo/Pictures/wallpaper/bluefire.jpg fill
-output DP-1 bg /home/gianpaulo/Pictures/wallpaper/bluefire.jpg fill
-output DP-3 bg /home/gianpaulo/Pictures/wallpaper/bluefire.jpg fill
+output eDP-1 bg $wallpaper fill
+output DP-1 bg $wallpaper fill
+output DP-3 bg $wallpaper fill
 
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
 exec hash dbus-update-activation-environment 2>/dev/null && \
