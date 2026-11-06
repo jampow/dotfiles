@@ -1,0 +1,24 @@
+onboarding = false
+
+[theme]
+name = "nord"
+auto_switch = false
+
+[ui.toast]
+delivery = "system"
+
+[ui]
+show_agent_labels_on_pane_borders = true
+
+[keys]
+prefix = "ctrl+a"
+goto = "prefix+g"
+new_tab = "prefix+c"
+next_tab = "prefix+n"
+previous_tab = "prefix+p"
+focus_pane_left = "prefix+h"
+focus_pane_right = "prefix+l"
+navigate_workspace_down = "ctrl+j"
+navigate_pane_down = "j"
+split_horizontal = "prefix+comma"
+split_vertical = "prefix+minus"
